@@ -11,6 +11,7 @@
     "next": "9.5.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "standard": "^14.3.4"
+    "standard": "^14.3.4",
+    "styled-components": "^5.1.1"
   }
 }
