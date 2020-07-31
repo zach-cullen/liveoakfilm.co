@@ -1,7 +1,13 @@
-import '../styles/globals.css'
+import '../styles/reset.css'
+import { ThemeProvider } from 'styled-components'
+import theme from '../theme/theme'
 
 const App = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider theme={theme}>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  )
 }
 
 export default App
