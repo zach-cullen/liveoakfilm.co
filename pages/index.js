@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Button from '../components/button'
 
 export default function Home () {
   return (
@@ -10,6 +11,9 @@ export default function Home () {
 
       <main>
         <h1>Main</h1>
+        <Button>
+          Hello!
+        </Button>
       </main>
 
       <footer>
