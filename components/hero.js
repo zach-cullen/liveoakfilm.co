@@ -29,11 +29,13 @@ const BackgroundVideoIframe = styled.iframe`
   transform: translate(-50%, -10%);
 `
 
-const Hero = () => (
+const Hero = ({ videoUrl }) => (
+  // props videoUrl must be provided for video background to work.
+  // must use player.vimeo address with params: '?background=1&autoplay=1&loop=1&byline=0&title=0' not public url
   <HeroDiv>
     <BackgroundVideoWrapper>
       <BackgroundVideoIframe
-        src='https://player.vimeo.com/video/227477654?background=1&autoplay=1&loop=1&byline=0&title=0'
+        src={videoUrl}
         frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen
       />
     </BackgroundVideoWrapper>
