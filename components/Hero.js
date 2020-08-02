@@ -1,9 +1,20 @@
 import styled from 'styled-components'
 
+// background-image sits beneath video overlay as fallback in unsupported mobile browsers
 const HeroDiv = styled.div`
   position: relative;
+  z-index: -2;
   width: 100%;
   height: ${props => props.screenPercentage}vh;
+  background-image: url('/images/hero-mobile-fallback.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+`
+
+const HeroOverlay = styled.div`
+  width: 100%;
+  height: 100%;
   background-color: hsla(39, 30%, 55%, 0.34);
 `
 
@@ -36,13 +47,15 @@ const Hero = ({ videoUrl, screenPercentage }) => (
   // must use player.vimeo address with params: '?background=1&autoplay=1&loop=1&byline=0&title=0' not public url
   // screenPercentage prop should be integer <= 100 and determines height of hero section as percentage of screen height
   <HeroDiv screenPercentage={screenPercentage}>
-    <BackgroundVideoWrapper>
-      <BackgroundVideoIframe
-        src={videoUrl}
-        frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen
-        screenPercentage={screenPercentage}
-      />
-    </BackgroundVideoWrapper>
+    <HeroOverlay>
+      <BackgroundVideoWrapper>
+        <BackgroundVideoIframe
+          src={videoUrl}
+          frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen
+          screenPercentage={screenPercentage}
+        />
+      </BackgroundVideoWrapper>
+    </HeroOverlay>
   </HeroDiv>
 )
 
