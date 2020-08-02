@@ -4,7 +4,7 @@ const HeroDiv = styled.div`
   position: relative;
   width: 100%;
   height: 60vh;
-  background-color: hsla(32, 29%, 35%, 40%);
+  background-color: hsla(39, 30%, 55%, 0.34);
 `
 
 const BackgroundVideoWrapper = styled.div`
