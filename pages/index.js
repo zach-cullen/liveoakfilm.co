@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Hero from '../components/hero'
-import Button from '../components/button'
+import Hero from '../components/Hero'
+import Button from '../components/Button'
 import PageSection from '../components/PageSection'
 
 export default function Home () {
