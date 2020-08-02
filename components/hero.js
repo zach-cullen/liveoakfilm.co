@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const HeroDiv = styled.div`
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: ${props => props.screenPercentage}vh;
   background-color: hsla(39, 30%, 55%, 0.34);
 `
 
@@ -18,25 +18,29 @@ const BackgroundVideoWrapper = styled.div`
   overflow: hidden;
 `
 
+// min-height calculation creates necessary slightly oversize
+// height and min-width calculations assume 16:9 aspect ratio
 const BackgroundVideoIframe = styled.iframe`
   width: 100vw;
   height: 56.25vw;
-  min-height: 70vh;
-  min-width: 125vh;
+  min-height: ${props => props.screenPercentage * 1.16}vh; 
+  min-width: ${props => props.screenPercentage * 1.16 * 1.78}vh;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translate(-50%, -10%);
 `
 
-const Hero = ({ videoUrl }) => (
+const Hero = ({ videoUrl, screenPercentage }) => (
   // props videoUrl must be provided for video background to work.
   // must use player.vimeo address with params: '?background=1&autoplay=1&loop=1&byline=0&title=0' not public url
-  <HeroDiv>
+  // screenPercentage prop should be integer <= 100 and determines height of hero section as percentage of screen height
+  <HeroDiv screenPercentage={screenPercentage}>
     <BackgroundVideoWrapper>
       <BackgroundVideoIframe
         src={videoUrl}
         frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen
+        screenPercentage={screenPercentage}
       />
     </BackgroundVideoWrapper>
   </HeroDiv>
