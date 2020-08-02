@@ -12,7 +12,9 @@ export default function Home () {
       </Head>
 
       <main>
-        <Hero />
+        <Hero
+          videoUrl='https://player.vimeo.com/video/227477654?background=1&autoplay=1&loop=1&byline=0&title=0'
+        />
         <PageSection>
           <h1>Hello!</h1>
           <Button>
