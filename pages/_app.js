@@ -1,4 +1,4 @@
-import '../styles/reset.css'
+import '../styles/global.css'
 import { ThemeProvider } from 'styled-components'
 import theme from '../theme/theme'
 
