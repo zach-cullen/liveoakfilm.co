@@ -2,7 +2,8 @@ export default {
   colors: {
     amber: '#ae804c',
     charcoal: '#303030',
-    stone: '#f8f5f1'
+    stone: '#f8f5f1',
+    khaki: '#E4DBCC'
   },
   sizes: {
     text: {
