@@ -31,7 +31,7 @@ export default function Home () {
               </Text>
             </CustomContainer>
             <Button>
-              Contact
+              Making Your Film
             </Button>
           </SectionContainer>
         </PageSection>
