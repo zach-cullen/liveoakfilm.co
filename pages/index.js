@@ -19,7 +19,9 @@ export default function Home () {
           screenPercentage={66}
           videoUrl='https://player.vimeo.com/video/227477654?background=1&autoplay=1&loop=1&byline=0&title=0'
         />
-        <PageSection>
+        <PageSection
+          bgColor={props => props.theme.colors.stone}
+        >
           <SectionContainer textAlign='center'>
             <CustomContainer maxW='540px'>
               <h1>
