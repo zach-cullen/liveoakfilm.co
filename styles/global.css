@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('PT Serif'), local('PTSerif-Regular'), url('/fonts/pt-serif-v11-latin-regular.woff2') format('woff2')
+  src: local('PT Serif'), local('PTSerif-Regular'), url('/fonts/pt-serif-v11-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Montserrat Regular'), local('Montserrat-Regular'), url('/fonts/montserrat-v14-latin-regular.woff2') format('woff2')
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url('/fonts/montserrat-v14-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Majesti Banner Book'), local('Majesti-Banner-Book'), url('/fonts/Majesti-Banner-Book.woff2') format('woff2')
+  src: local('Majesti Banner Book'), local('Majesti-Banner-Book'), url('/fonts/Majesti-Banner-Book.woff2') format('woff2');
 }
 
 * {
@@ -28,9 +28,10 @@
 }
 
 p {
+  font-size: 15px;
   font-family: PT-Serif;
+  line-height: 2em;
 }
-
 a {
   color: inherit;
   text-decoration: none;
@@ -39,8 +40,8 @@ a {
 h1 {
   font-family: Majesti-Banner, serif;
   font-size: clamp(30px, 8vw, 42px);
-  text-align: center;
   line-height: 1.2em;
+  letter-spacing: 0.01em;
 }
 
 h2 {
