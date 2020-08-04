@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Footer from '../components/Footer'
 import Hero from '../components/Hero'
 import Button from '../components/Button'
 import PageSection from '../components/PageSection'
@@ -40,14 +41,10 @@ export default function Home () {
         <PageSection
           bgColor={props => props.theme.colors.khaki}
         >
-          <h2>See you later.</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est. Auctor eu augue ut lectus arcu. Pharetra massa massa ultricies mi quis. Pretium lectus quam id leo in vitae turpis massa.</p>
+          <SectionContainer />
         </PageSection>
       </main>
-
-      <footer>
-        <h2>Footer</h2>
-      </footer>
+      <Footer />
     </>
   )
 }
