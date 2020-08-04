@@ -16,8 +16,8 @@ const HeroDiv = styled.div`
 const HeroContent = styled.div`
   position: absolute;
   width: 50%;
-  max-width: 360px;
-  height: 33%;
+  max-width: 300px;
+  height: 30%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
