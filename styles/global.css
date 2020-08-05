@@ -23,11 +23,19 @@
 }
 
 @font-face {
-  font-family: 'Majesti-Banner';
+  font-family: 'Freight-Big-Pro';
   font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local('Freight Big Pro Medium'), url('/fonts/Freight-Big-Pro-Medium.woff2');
+}
+
+@font-face {
+  font-family: 'Freight-Big-Pro';
+  font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: local('Majesti Banner Book'), local('Majesti-Banner-Book'), url('/fonts/Majesti-Banner-Book.woff2') format('woff2');
+  src: local('Freight Big Pro Book Italic'), url('/fonts/Freight-Big-Pro-Book-Italic.woff2');
 }
 
 * {
@@ -54,15 +62,33 @@ a {
 }
 
 h1 {
-  font-family: Majesti-Banner, serif;
+  font-family: Freight-Big-Pro, serif;
   font-size: clamp(28px, 7vw, 36px);
+  font-weight: normal;
   line-height: 1.2em;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.05em;
 }
 
 h2 {
+  font-family: Freight-Big-Pro, serif;
+  font-size: clamp(20px, 6vw, 28px);
+  font-weight: normal;
+  line-height: 1.2em;
+  letter-spacing: 0.05em;
+}
+
+h3 {
+  font-family: Freight-Big-Pro, serif;
+  font-size: 17px;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 1.6em;
+  letter-spacing: 0.1em;
+}
+
+h4 {
   font-family: Montserrat, sans-serif;
-  font-size: 20px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
 }
