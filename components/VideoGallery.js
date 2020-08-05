@@ -4,16 +4,32 @@ const VideoGrid = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 5fr 3fr;
-  grid-gap: 50px;
+  column-gap: 50px;
+  grid-template-areas: 
+    'video description'
+    'video description';
+
+  @media (max-width: 720px) {
+    grid-template-areas: 
+    'video video'
+    'description description';
+  }
 `
 
 const VideoBlock = styled.div`
-  display: block;
-  padding-top: 56.25%;
-  background-color: #fff;
+  grid-area: video;
+  padding-top: 52.6%;
+  box-sizing: border-box;
+  border: solid 10px #fff;
+  background-image: url('/images/ovca-georgiev/ovca-georgiev-21.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.2);
 `
 
 const VideoDescription = styled.div`
+  grid-area: description;
   width: 100%;
   margin: 20px 0;
 
@@ -23,6 +39,10 @@ const VideoDescription = styled.div`
 
   h3 {
     margin-bottom: 16px;
+  }
+
+  @media (max-width: 720px) {
+    text-align: center;
   }
 `
 
