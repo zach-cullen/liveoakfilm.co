@@ -27,15 +27,14 @@ export default function Home () {
           <SectionContainer textAlign='center'>
             <CustomContainer maxW='540px'>
               <h1>
-                Love should be<br />
-                remembered.
+                Love should be remembered.
               </h1>
               <Text pY='30px'>
                 These are the memories that you want to last forever. This is the feeling that you don't want to forget. We are here to help you capture the best moments of your life because a love that is remembered is a <strong>love that leaves a legacy.</strong>
               </Text>
             </CustomContainer>
             <Button>
-              Making Your Film
+              Let us tell your story
             </Button>
           </SectionContainer>
         </PageSection>
