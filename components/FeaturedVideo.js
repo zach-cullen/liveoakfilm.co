@@ -36,7 +36,7 @@ const VideoDescription = styled.div`
     margin-bottom: 4px;
   }
 
-  h3 {
+  h5 {
     margin-bottom: 16px;
   }
 
@@ -51,7 +51,7 @@ const FeaturedVideo = (props) => {
       <VideoBlock />
       <VideoDescription>
         <h2>Kelsi & Kristian</h2>
-        <h3>Blue Hill at Stone Barns</h3>
+        <h5>Blue Hill at Stone Barns</h5>
         <h4>
           “I  believe, in a way that makes me feel both grounded and free, that I love you — and that I always will.”
         </h4>
