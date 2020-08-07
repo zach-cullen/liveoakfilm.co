@@ -45,10 +45,10 @@ const VideoDescription = styled.div`
   }
 `
 
-const FeaturedVideo = (props) => {
+const FeaturedVideo = ({ filmCollection, flipDirection }) => {
   return (
-    <VideoGrid flipDirection={props.flipDirection}>
-      <VideoBlock coverImageURL={props.filmCollection.videoCover.formats.medium.url} />
+    <VideoGrid flipDirection={flipDirection}>
+      <VideoBlock coverImageURL={filmCollection.videoCover.formats.medium.url} />
       <VideoDescription>
         <h2>Kelsi & Kristian</h2>
         <h5>Blue Hill at Stone Barns</h5>
