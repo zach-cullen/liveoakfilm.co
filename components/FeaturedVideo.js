@@ -4,14 +4,14 @@ const VideoGrid = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: ${props => props.flipDirection ? '3fr 5fr' : '5fr 3fr'};
-  column-gap: 50px;
   grid-template-areas: '${props => props.flipDirection ? 'description video' : 'video description'}';
   margin-bottom: 60px;
+  box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.2);
 
   @media (max-width: 720px) {
     grid-template-areas: 
-    'video'
-    'description';
+    'video video'
+    'description description';
   }
 `
 
@@ -24,13 +24,14 @@ const VideoBlock = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.2);
 `
 
 const VideoDescription = styled.div`
   grid-area: description;
-  width: 100%;
-  margin: 20px 0;
+  min-width: 320px;
+  box-sizing: border-box;
+  padding: 40px;
+  background-color: #fff;
 
   h2 {
     margin-bottom: 4px;
