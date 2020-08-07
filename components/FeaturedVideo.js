@@ -46,7 +46,7 @@ const VideoDescription = styled.div`
   }
 `
 
-const VideoGallery = () => {
+const FeaturedVideo = () => {
   return (
     <VideoGrid>
       <VideoBlock />
@@ -54,11 +54,11 @@ const VideoGallery = () => {
         <h2>Kelsi & Kristian</h2>
         <h3>Blue Hill at Stone Barns</h3>
         <h4>
-          “I  believe — in a way that makes me feel both grounded and free — that I love you, and that I always will.”
+          “I  believe, in a way that makes me feel both grounded and free, that I love you — and that I always will.”
         </h4>
       </VideoDescription>
     </VideoGrid>
   )
 }
 
-export default VideoGallery
+export default FeaturedVideo

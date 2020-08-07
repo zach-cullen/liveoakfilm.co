@@ -5,7 +5,7 @@ import Button from '../components/Button'
 import PageSection from '../components/PageSection'
 import SectionContainer from '../components/SectionContainer'
 import CustomContainer from '../components/CustomContainer'
-import VideoGallery from '../components/VideoGallery'
+import FeaturedVideo from '../components/FeaturedVideo'
 import Text from '../components/Text'
 
 export default function Home () {
@@ -42,7 +42,7 @@ export default function Home () {
           bgColor={props => props.theme.colors.khaki}
         >
           <SectionContainer>
-            <VideoGallery />
+            <FeaturedVideo />
           </SectionContainer>
         </PageSection>
       </main>
