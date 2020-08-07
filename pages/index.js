@@ -43,6 +43,8 @@ export default function Home () {
         >
           <SectionContainer>
             <FeaturedVideo />
+            <FeaturedVideo flipDirection />
+            <FeaturedVideo />
           </SectionContainer>
         </PageSection>
       </main>
