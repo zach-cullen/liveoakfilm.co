@@ -50,11 +50,9 @@ const FeaturedVideo = ({ filmCollection, flipDirection }) => {
     <VideoGrid flipDirection={flipDirection}>
       <VideoBlock coverImageURL={filmCollection.videoCover.formats.medium.url} />
       <VideoDescription>
-        <h2>Kelsi & Kristian</h2>
-        <h5>Blue Hill at Stone Barns</h5>
-        <h4>
-          “I  believe, in a way that makes me feel both grounded and free, that I love you — and that I always will.”
-        </h4>
+        <h2>{filmCollection.title}</h2>
+        <h5>{filmCollection.venue}</h5>
+        <h4>{filmCollection.quote}</h4>
       </VideoDescription>
     </VideoGrid>
   )
