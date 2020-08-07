@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 const VideoGrid = styled.div`
   width: 100%;
+  box-sizing: border-box;
+  border: solid 10px #fff;
   display: grid;
   grid-template-columns: ${props => props.flipDirection ? '3fr 5fr' : '5fr 3fr'};
   grid-template-areas: '${props => props.flipDirection ? 'description video' : 'video description'}';
@@ -18,8 +20,6 @@ const VideoGrid = styled.div`
 const VideoBlock = styled.div`
   grid-area: video;
   padding-top: 52.6%;
-  box-sizing: border-box;
-  border: solid 10px #fff;
   background-image: url('/images/ovca-georgiev/ovca-georgiev-21.jpg');
   background-repeat: no-repeat;
   background-position: center;
@@ -29,7 +29,7 @@ const VideoBlock = styled.div`
 const VideoDescription = styled.div`
   grid-area: description;
   box-sizing: border-box;
-  padding: 40px;
+  padding: 30px 40px;
   background-color: #fff;
 
   h2 {
