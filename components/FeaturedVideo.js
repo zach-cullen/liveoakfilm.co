@@ -31,15 +31,12 @@ const VideoDescription = styled.div`
   box-sizing: border-box;
   padding: 30px 40px;
   background-color: #fff;
-
   h2 {
     margin-bottom: 4px;
   }
-
   h5 {
     margin-bottom: 16px;
   }
-
   @media (max-width: 720px) {
     text-align: center;
   }
