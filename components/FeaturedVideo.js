@@ -20,7 +20,7 @@ const VideoGrid = styled.div`
 const VideoBlock = styled.div`
   grid-area: video;
   padding-top: 52.6%;
-  background-image: url('/images/ovca-georgiev/ovca-georgiev-21.jpg');
+  background-image: url('http://localhost:1337${props => props.coverImageURL}');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -48,7 +48,7 @@ const VideoDescription = styled.div`
 const FeaturedVideo = (props) => {
   return (
     <VideoGrid flipDirection={props.flipDirection}>
-      <VideoBlock />
+      <VideoBlock coverImageURL={props.filmCollection.videoCover.formats.medium.url} />
       <VideoDescription>
         <h2>Kelsi & Kristian</h2>
         <h5>Blue Hill at Stone Barns</h5>
