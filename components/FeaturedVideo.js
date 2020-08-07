@@ -28,7 +28,6 @@ const VideoBlock = styled.div`
 
 const VideoDescription = styled.div`
   grid-area: description;
-  min-width: 320px;
   box-sizing: border-box;
   padding: 40px;
   background-color: #fff;
