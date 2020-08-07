@@ -3,16 +3,15 @@ import styled from 'styled-components'
 const VideoGrid = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: 5fr 3fr;
+  grid-template-columns: ${props => props.flipDirection ? '3fr 5fr' : '5fr 3fr'};
   column-gap: 50px;
-  grid-template-areas: 
-    'video description'
-    'video description';
+  grid-template-areas: '${props => props.flipDirection ? 'description video' : 'video description'}';
+  margin-bottom: 60px;
 
   @media (max-width: 720px) {
     grid-template-areas: 
-    'video video'
-    'description description';
+    'video'
+    'description';
   }
 `
 
@@ -46,9 +45,9 @@ const VideoDescription = styled.div`
   }
 `
 
-const FeaturedVideo = () => {
+const FeaturedVideo = (props) => {
   return (
-    <VideoGrid>
+    <VideoGrid flipDirection={props.flipDirection}>
       <VideoBlock />
       <VideoDescription>
         <h2>Kelsi & Kristian</h2>
