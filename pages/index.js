@@ -8,7 +8,7 @@ import CustomContainer from '../components/CustomContainer'
 import FeaturedVideo from '../components/FeaturedVideo'
 import Text from '../components/Text'
 
-export default function Home () {
+export default function Home ({ pageContent }) {
   return (
     <>
       <Head>
@@ -42,13 +42,23 @@ export default function Home () {
           bgColor={props => props.theme.colors.khaki}
         >
           <SectionContainer>
-            <FeaturedVideo />
-            <FeaturedVideo flipDirection />
-            <FeaturedVideo />
+            {pageContent.film_collections.map((filmCollection, i) => (
+              <FeaturedVideo key={filmCollection.id} filmCollection={filmCollection} flipDirection={(i + 1) % 2 === 0} />
+            ))}
           </SectionContainer>
         </PageSection>
       </main>
       <Footer />
     </>
   )
+}
+
+export async function getStaticProps () {
+  const res = await fetch('http://localhost:1337/home')
+  const pageContent = await res.json()
+  return {
+    props: {
+      pageContent
+    }
+  }
 }
