@@ -47,6 +47,7 @@ export default function Home ({ pageContent }) {
             ))}
           </SectionContainer>
         </PageSection>
+        <PageSection />
       </main>
       <Footer />
     </>
