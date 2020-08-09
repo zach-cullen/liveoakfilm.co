@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
 import Button from '../components/Button'
@@ -15,8 +16,8 @@ export default function Home ({ pageContent }) {
         <title>Live Oak Films</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-
       <main>
+        <Nav />
         <Hero
           screenPercentage={66}
           videoUrl='https://player.vimeo.com/video/227477654?background=1&autoplay=1&loop=1&byline=0&title=0'
