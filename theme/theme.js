@@ -15,5 +15,8 @@ export default {
       h2: 32,
       h1: 48
     }
+  },
+  effects: {
+    mdBoxShadow: '0px 4px 16px 0px rgba(0,0,0,0.2)'
   }
 }
