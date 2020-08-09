@@ -6,7 +6,7 @@ const Nav = styled.nav`
   width: 100%;
   height: 50px;
   background-color: #fff;
-  box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: ${props => props.theme.effects.mdBoxShadow};
 `
 
 export default Nav

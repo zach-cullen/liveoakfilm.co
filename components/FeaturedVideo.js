@@ -8,7 +8,7 @@ const VideoGrid = styled.div`
   grid-template-columns: ${props => props.flipDirection ? '3fr 5fr' : '5fr 3fr'};
   grid-template-areas: '${props => props.flipDirection ? 'description video' : 'video description'}';
   margin-bottom: 60px;
-  box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: ${props => props.theme.effects.mdBoxShadow};
 
   @media (max-width: 720px) {
     grid-template-areas: 
