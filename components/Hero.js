@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 
 const HeroDiv = styled.div`
   position: relative;
@@ -61,7 +61,7 @@ const Hero = ({ videoUrl, screenPercentage }) => {
   const applyParallax = (ref, parallaxRate) => {
     ref.current.style.top = `-${window.pageYOffset * parallaxRate}px`
   }
-  useEffect(() => {
+  useLayoutEffect(() => {
     document.addEventListener('scroll', () => {
       applyParallax(iframeRef, 0.5)
     })
