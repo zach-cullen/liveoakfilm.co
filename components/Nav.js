@@ -1,13 +1,19 @@
-import styled from 'styled-components'
-import { useEffect, useState} from 'react'
+import styled, { keyframes } from 'styled-components'
+import { useEffect, useState } from 'react'
+
+const fadeIn = keyframes`
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+`
 
 const NavGrid = styled.nav`
   position: ${props => props.navPosition};
   top: 0;
   width: 100%;
   height: 50px;
-  background-color: ${props => props.theme.colors.stone};
-  box-shadow: ${props => props.theme.effects.mdBoxShadow};
+  background-color: ${props => props.navPosition === 'fixed' ? props.theme.colors.stone : 'transparent'};
+  box-shadow: ${props => props.navPosition === 'fixed' ? props.theme.effects.mdBoxShadow : ''};
+  animation: ${props => props.navPosition === 'fixed' ? fadeIn : ''} 0.4s ease-in-out;
 `
 
 const Nav = () => {
