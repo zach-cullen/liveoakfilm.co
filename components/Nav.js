@@ -17,7 +17,7 @@ const Nav = () => {
     document.addEventListener('scroll', () => {
       setScrollValue(window.pageYOffset)
     })
-  })
+  }, [])
   return (
     <NavGrid navPosition={navPosition(scrollValue)} />
   )
