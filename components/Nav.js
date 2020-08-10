@@ -7,25 +7,28 @@ const fadeIn = keyframes`
 `
 
 const NavGrid = styled.nav`
-  position: ${props => props.navPosition};
   top: 0;
   width: 100%;
   height: 50px;
-  background-color: ${props => props.navPosition === 'fixed' ? props.theme.colors.stone : 'transparent'};
-  box-shadow: ${props => props.navPosition === 'fixed' ? props.theme.effects.mdBoxShadow : ''};
-  animation: ${props => props.navPosition === 'fixed' ? fadeIn : ''} 0.4s ease-in-out;
+  position: ${props => props.fixedNav ? 'fixed' : 'absolute'};
+  background-color: ${props => props.fixedNav ? props.theme.colors.stone : ''};
+  box-shadow: ${props => props.fixedNav ? props.theme.effects.mdBoxShadow : ''};
+  animation: ${props => props.fixedNav ? fadeIn : ''} 0.4s ease-in-out;
+  color: ${props => props.fixedNav ? props.theme.colors.charcoal : '#fff'};
 `
 
 const Nav = () => {
   const [scrollValue, setScrollValue] = useState(0)
-  const navPosition = scrollValue => scrollValue < 600 ? 'absolute' : 'fixed'
+  const fixedNav = scrollValue => scrollValue > 600
   useEffect(() => {
     document.addEventListener('scroll', () => {
       setScrollValue(window.pageYOffset)
     })
   }, [])
   return (
-    <NavGrid navPosition={navPosition(scrollValue)} />
+    <NavGrid fixedNav={fixedNav(scrollValue)}>
+      NAVIGATION
+    </NavGrid>
   )
 }
 
