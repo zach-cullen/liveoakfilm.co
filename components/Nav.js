@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { useEffect, useRef } from 'react'
+import { useEffect, useState} from 'react'
 
 const NavGrid = styled.nav`
-  position: absolute;
+  position: ${props => props.navPosition};
   top: 0;
   width: 100%;
   height: 50px;
@@ -11,16 +11,15 @@ const NavGrid = styled.nav`
 `
 
 const Nav = () => {
-  const navRef = useRef(null)
+  const [scrollValue, setScrollValue] = useState(0)
+  const navPosition = scrollValue => scrollValue < 600 ? 'absolute' : 'fixed'
   useEffect(() => {
     document.addEventListener('scroll', () => {
-      if (window.pageYOffset > 600) {
-        navRef.current.style.position = 'fixed';
-      }
+      setScrollValue(window.pageYOffset)
     })
   })
   return (
-    <NavGrid ref={navRef} />
+    <NavGrid navPosition={navPosition(scrollValue)} />
   )
 }
 
