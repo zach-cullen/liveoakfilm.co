@@ -65,7 +65,7 @@ const Hero = ({ videoUrl, screenPercentage }) => {
     document.addEventListener('scroll', () => {
       applyParallax(iframeRef, 0.5)
     })
-  })
+  }, [])
 
   return (
     <HeroDiv screenPercentage={screenPercentage}>
