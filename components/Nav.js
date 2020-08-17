@@ -10,7 +10,7 @@ const fadeIn = keyframes`
 const NavGrid = styled.nav`
   top: 0;
   width: 100%;
-  height: 50px;
+  padding: 20px 0;
   position: ${props => props.fixedNav ? 'fixed' : 'absolute'};
   background-color: ${props => props.fixedNav ? props.theme.colors.stone : ''};
   box-shadow: ${props => props.fixedNav ? props.theme.effects.mdBoxShadow : ''};
@@ -26,7 +26,7 @@ const NavContents = styled.div`
 
 const NavLogo = styled.div`
   grid-area: logo;
-  height: 50px;
+  height: ${props => props.fixedNav ? '30px' : '50px'};
   width: 50px;
   background-image: url('/images/lo-logo-white.png');
   background-repeat: no-repeat;
@@ -46,7 +46,7 @@ const Nav = () => {
     <NavGrid fixedNav={fixedNav(scrollValue)}>
       <SectionContainer>
         <NavContents>
-          <NavLogo />
+          <NavLogo fixedNav={fixedNav(scrollValue)} />
         </NavContents>
       </SectionContainer>
     </NavGrid>
