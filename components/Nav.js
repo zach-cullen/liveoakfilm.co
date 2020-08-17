@@ -18,11 +18,21 @@ const NavGrid = styled.nav`
   color: ${props => props.fixedNav ? props.theme.colors.charcoal : '#fff'};
 `
 
-const NavContents = () => (
-  <>
-    Navigation Contents
-  </>
-)
+const NavContents = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 'logo links';
+`
+
+const NavLogo = styled.div`
+  grid-area: logo;
+  height: 50px;
+  width: 50px;
+  background-image: url('/images/lo-logo-white.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+`
 
 const Nav = () => {
   const [scrollValue, setScrollValue] = useState(0)
@@ -35,7 +45,9 @@ const Nav = () => {
   return (
     <NavGrid fixedNav={fixedNav(scrollValue)}>
       <SectionContainer>
-        <NavContents />
+        <NavContents>
+          <NavLogo />
+        </NavContents>
       </SectionContainer>
     </NavGrid>
   )
