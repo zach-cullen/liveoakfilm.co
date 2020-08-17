@@ -59,6 +59,7 @@ const BackgroundVideoIframe = styled.iframe`
 const Hero = ({ videoUrl, screenPercentage }) => {
   const iframeRef = useRef(null)
   const applyParallax = (ref, parallaxRate) => {
+    if (!ref) return
     ref.current.style.top = `-${window.pageYOffset * parallaxRate}px`
   }
   useLayoutEffect(() => {
@@ -66,7 +67,6 @@ const Hero = ({ videoUrl, screenPercentage }) => {
       applyParallax(iframeRef, 0.5)
     })
   }, [])
-
   return (
     <HeroDiv screenPercentage={screenPercentage}>
       <HeroContent />
