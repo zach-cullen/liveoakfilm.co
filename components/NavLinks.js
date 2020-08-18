@@ -17,6 +17,19 @@ const StyledLink = styled.a`
   margin-left: 24px;
 `
 
+const StyledNavButton = styled.a`
+  padding: 5px 15px;
+  border: none;
+  border-radius: 3px;
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: ${props => props.theme.colors.charcoal};
+  margin-left: 24px;
+  background-color: ${props => props.fixedNav ? props.theme.colors.khaki : '#fff'};
+`
+
 const NavLinks = ({ fixedNav }) => (
   <NavLinksContainer>
     <Link href='#home' passHref>
@@ -29,7 +42,7 @@ const NavLinks = ({ fixedNav }) => (
       <StyledLink fixedNav={fixedNav}>Portfolio</StyledLink>
     </Link>
     <Link href='#inquire' passHref>
-      <StyledLink fixedNav={fixedNav}>Inquire</StyledLink>
+      <StyledNavButton fixedNav={fixedNav}>Inquire</StyledNavButton>
     </Link>
   </NavLinksContainer>
 )
