@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import SectionContainer from './SectionContainer'
+import CustomContainer from './CustomContainer'
 import NavLinks from './NavLinks'
 import NavLogoSVG from './NavLogoSVG'
 
@@ -23,7 +23,7 @@ const NavGrid = styled.nav`
 
 const NavContents = styled.div`
   display: grid;
-  grid-template-columns: ${props => props.fixedNav ? '30px' : '50px'} 1fr;
+  grid-template-columns: ${props => props.fixedNav ? '32px' : '50px'} 1fr;
   grid-template-areas: 'logo links';
 `
 
@@ -36,14 +36,14 @@ const Nav = (props) => {
   }, [])
   return (
     <NavGrid fixedNav={fixedNav}>
-      <SectionContainer>
+      <CustomContainer maxW='1200px' pX='20px'>
         <NavContents fixedNav={fixedNav}>
           <Link href='#logo'>
-            <a><NavLogoSVG fill={fixedNav ? props => props.theme.colors.charcoal : '#ffffff'} height='30' /></a>
+            <a><NavLogoSVG fill={fixedNav ? '#ae804c' : '#ffffff'} height='30' /></a>
           </Link>
           <NavLinks fixedNav={fixedNav} />
         </NavContents>
-      </SectionContainer>
+      </CustomContainer>
     </NavGrid>
   )
 }
