@@ -36,18 +36,17 @@ const NavLogo = styled.div`
 `
 
 const Nav = () => {
-  const [scrollValue, setScrollValue] = useState(0)
-  const fixedNav = scrollValue => scrollValue > 600
+  const [fixedNav, setFixedNav] = useState(false)
   useEffect(() => {
     document.addEventListener('scroll', () => {
-      setScrollValue(window.pageYOffset)
+      setFixedNav(window.pageYOffset > 600)
     })
   }, [])
   return (
-    <NavGrid fixedNav={fixedNav(scrollValue)}>
+    <NavGrid fixedNav={fixedNav}>
       <SectionContainer>
         <NavContents>
-          <NavLogo fixedNav={fixedNav(scrollValue)} />
+          <NavLogo fixedNav={fixedNav} />
           <NavLinks />
         </NavContents>
       </SectionContainer>
