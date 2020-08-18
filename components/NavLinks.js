@@ -28,6 +28,12 @@ const StyledNavButton = styled.a`
   color: ${props => props.theme.colors.charcoal};
   margin-left: 24px;
   background-color: ${props => props.fixedNav ? props.theme.colors.khaki : '#fff'};
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    color: #fff;
+    background-color: ${props => props.theme.colors.amber};
+  }
 `
 
 const NavLinks = ({ fixedNav }) => (
