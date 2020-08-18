@@ -47,7 +47,7 @@ const Nav = () => {
       <SectionContainer>
         <NavContents>
           <NavLogo fixedNav={fixedNav} />
-          <NavLinks />
+          <NavLinks fixedNav={fixedNav} />
         </NavContents>
       </SectionContainer>
     </NavGrid>

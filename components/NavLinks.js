@@ -13,12 +13,13 @@ const StyledLink = styled.a`
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
+  color: ${props => props.fixedNav ? props.theme.colors.charcoal : '#fff'};
 `
 
-const NavLinks = () => (
+const NavLinks = ({ fixedNav }) => (
   <NavLinksContainer>
     <Link href='#home' passHref>
-      <StyledLink>Home</StyledLink>
+      <StyledLink fixedNav={fixedNav}>Home</StyledLink>
     </Link>
   </NavLinksContainer>
 )
