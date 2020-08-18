@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useLayoutEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 const HeroDiv = styled.div`
   position: relative;
@@ -59,13 +59,10 @@ const BackgroundVideoIframe = styled.iframe`
 const Hero = ({ videoUrl, screenPercentage }) => {
   const iframeRef = useRef(null)
   const applyParallax = (ref, parallaxRate) => {
-    if (!ref) return
-    ref.current.style.top = `-${window.pageYOffset * parallaxRate}px`
+    if (ref.current !== null) ref.current.style.top = `-${window.pageYOffset * parallaxRate}px`
   }
-  useLayoutEffect(() => {
-    document.addEventListener('scroll', () => {
-      applyParallax(iframeRef, 0.5)
-    })
+  useEffect(() => {
+    document.addEventListener('scroll', () => applyParallax(iframeRef, 0.5))
   }, [])
   return (
     <HeroDiv screenPercentage={screenPercentage}>
