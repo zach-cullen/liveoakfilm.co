@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import SectionContainer from './SectionContainer'
 import NavLinks from './NavLinks'
 import NavLogoSVG from './NavLogoSVG'
@@ -37,7 +38,9 @@ const Nav = (props) => {
     <NavGrid fixedNav={fixedNav}>
       <SectionContainer>
         <NavContents fixedNav={fixedNav}>
-          <NavLogoSVG fill={fixedNav ? props => props.theme.colors.charcoal : '#ffffff'} height='30' />
+          <Link href='#logo'>
+            <a><NavLogoSVG fill={fixedNav ? props => props.theme.colors.charcoal : '#ffffff'} height='30' /></a>
+          </Link>
           <NavLinks fixedNav={fixedNav} />
         </NavContents>
       </SectionContainer>
