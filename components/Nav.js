@@ -2,6 +2,7 @@ import styled, { keyframes } from 'styled-components'
 import { useEffect, useState } from 'react'
 import SectionContainer from './SectionContainer'
 import NavLinks from './NavLinks'
+import NavLogoSVG from './NavLogoSVG'
 
 const fadeIn = keyframes`
   0% { opacity: 0; }
@@ -21,21 +22,11 @@ const NavGrid = styled.nav`
 
 const NavContents = styled.div`
   display: grid;
-  grid-template-columns: 60px 1fr;
+  grid-template-columns: ${props => props.fixedNav ? '30px' : '50px'} 1fr;
   grid-template-areas: 'logo links';
 `
 
-const NavLogo = styled.div`
-  grid-area: logo;
-  height: ${props => props.fixedNav ? '30px' : '50px'};
-  width: 50px;
-  background-image: url('/images/lo-logo-white.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-`
-
-const Nav = () => {
+const Nav = (props) => {
   const [fixedNav, setFixedNav] = useState(false)
   useEffect(() => {
     document.addEventListener('scroll', () => {
@@ -45,8 +36,8 @@ const Nav = () => {
   return (
     <NavGrid fixedNav={fixedNav}>
       <SectionContainer>
-        <NavContents>
-          <NavLogo fixedNav={fixedNav} />
+        <NavContents fixedNav={fixedNav}>
+          <NavLogoSVG fill={fixedNav ? props => props.theme.colors.charcoal : '#ffffff'} height='30' />
           <NavLinks fixedNav={fixedNav} />
         </NavContents>
       </SectionContainer>
