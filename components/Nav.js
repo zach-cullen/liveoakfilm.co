@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components'
 import { useEffect, useState } from 'react'
 import SectionContainer from './SectionContainer'
+import NavLinks from './NavLinks'
 
 const fadeIn = keyframes`
   0% { opacity: 0; }
@@ -20,7 +21,7 @@ const NavGrid = styled.nav`
 
 const NavContents = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 60px 1fr;
   grid-template-areas: 'logo links';
 `
 
@@ -47,6 +48,7 @@ const Nav = () => {
       <SectionContainer>
         <NavContents>
           <NavLogo fixedNav={fixedNav(scrollValue)} />
+          <NavLinks />
         </NavContents>
       </SectionContainer>
     </NavGrid>
