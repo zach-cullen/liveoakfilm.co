@@ -5,6 +5,7 @@ import CustomContainer from './CustomContainer'
 import NavLinks from './NavLinks'
 import NavLogoSVG from './NavLogoSVG'
 import NavHamburger from './NavHamburger'
+import NavMobileExpanded from './NavMobileExpanded'
 
 const fadeIn = keyframes`
   0% { opacity: 0; }
@@ -32,8 +33,11 @@ const NavContents = styled.div`
 const Nav = (props) => {
   const [fixedNav, setFixedNav] = useState(false)
   const [useMobileNav, setUseMobileNav] = useState(true)
+  const [expandMobileNav, setExpandMobileNav] = useState(false)
+  const toggleExpandMobileNav = () => setExpandMobileNav(prevState => !prevState)
   const windowWidthHandler = () => window.innerWidth > 600
-  const renderLinksOrHamburger = () => useMobileNav ? <NavLinks fixedNav={fixedNav} /> : <NavHamburger fill={fixedNav ? '#303030' : '#ffffff'} />
+  const renderLinksOrHamburger = () => useMobileNav ? <NavLinks fixedNav={fixedNav} /> : <NavHamburger handleClick={toggleExpandMobileNav} fill={fixedNav ? '#303030' : '#ffffff'} />
+  const renderExpandedMobileNav = () => { if (expandMobileNav) { return <NavMobileExpanded handleClick={toggleExpandMobileNav} /> } }
   useEffect(() => {
     document.addEventListener('scroll', () => {
       setFixedNav(window.pageYOffset > 600)
@@ -46,16 +50,19 @@ const Nav = (props) => {
     })
   }, [])
   return (
-    <NavGrid fixedNav={fixedNav}>
-      <CustomContainer maxW='1200px' pX='20px'>
-        <NavContents fixedNav={fixedNav}>
-          <Link href='#logo'>
-            <a><NavLogoSVG fill={fixedNav ? '#ae804c' : '#ffffff'} /></a>
-          </Link>
-          {renderLinksOrHamburger()}
-        </NavContents>
-      </CustomContainer>
-    </NavGrid>
+    <>
+      {renderExpandedMobileNav()}
+      <NavGrid fixedNav={fixedNav}>
+        <CustomContainer maxW='1200px' pX='20px'>
+          <NavContents fixedNav={fixedNav}>
+            <Link href='#logo'>
+              <a><NavLogoSVG fill={fixedNav ? '#ae804c' : '#ffffff'} /></a>
+            </Link>
+            {renderLinksOrHamburger()}
+          </NavContents>
+        </CustomContainer>
+      </NavGrid>
+    </>
   )
 }
 
