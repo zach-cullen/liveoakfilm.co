@@ -31,18 +31,15 @@ const ExpandTransition = styled.div`
 
   .expand--exit {
     opacity: 1;
-    /* width: 1; */
   }
 
   .expand--exit-active {
     opacity: 0;
-    /* width: 0; */
     transition: opacity 0.2s ease-out;
   }
 
   .expand--exit-done {
     opacity: 0;
-    /* width: 0; */
   }
 `
 
