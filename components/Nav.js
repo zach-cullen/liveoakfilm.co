@@ -37,7 +37,6 @@ const Nav = (props) => {
   const toggleExpandMobileNav = () => setExpandMobileNav(prevState => !prevState)
   const windowWidthHandler = () => window.innerWidth > 600
   const renderLinksOrHamburger = () => useMobileNav ? <NavLinks fixedNav={fixedNav} /> : <NavHamburger handleClick={toggleExpandMobileNav} fill={fixedNav ? '#303030' : '#ffffff'} />
-  const renderExpandedMobileNav = () => { if (expandMobileNav) { return <NavMobileExpanded handleClick={toggleExpandMobileNav} /> } }
   useEffect(() => {
     document.addEventListener('scroll', () => {
       setFixedNav(window.pageYOffset > 600)
@@ -51,7 +50,7 @@ const Nav = (props) => {
   }, [])
   return (
     <>
-      {renderExpandedMobileNav()}
+      <NavMobileExpanded inProp={expandMobileNav} handleClick={toggleExpandMobileNav} />
       <NavGrid fixedNav={fixedNav}>
         <CustomContainer maxW='1200px' pX='20px'>
           <NavContents fixedNav={fixedNav}>
