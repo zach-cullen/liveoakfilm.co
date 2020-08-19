@@ -52,8 +52,6 @@ const Nav = (props) => {
           <Link href='#logo'>
             <a><NavLogoSVG fill={fixedNav ? '#ae804c' : '#ffffff'} /></a>
           </Link>
-          {/* <NavLinks fixedNav={fixedNav} /> */}
-          {/* {<NavHamburger fill={fixedNav ? '#303030' : '#ffffff'} />} */}
           {renderLinksOrHamburger()}
         </NavContents>
       </CustomContainer>
