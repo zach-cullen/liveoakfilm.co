@@ -15,6 +15,7 @@ const NavGrid = styled.nav`
   width: 100%;
   padding: 20px 0;
   position: ${props => props.fixedNav ? 'fixed' : 'absolute'};
+  z-index: 100;
   background-color: ${props => props.fixedNav ? props.theme.colors.stone : ''};
   box-shadow: ${props => props.fixedNav ? props.theme.effects.mdBoxShadow : ''};
   animation: ${props => props.fixedNav ? fadeIn : ''} 0.4s ease-in-out;
