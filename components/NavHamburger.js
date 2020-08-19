@@ -15,7 +15,7 @@ const HamburgerContainer = styled.div`
 `
 
 const NavHamburger = (props) => (
-  <HamburgerContainer>
+  <HamburgerContainer onClick={props.handleClick}>
     <MenuIconSVG fill={props.fill} />
   </HamburgerContainer>
 )
