@@ -4,6 +4,7 @@ import Link from 'next/link'
 import CustomContainer from './CustomContainer'
 import NavLinks from './NavLinks'
 import NavLogoSVG from './NavLogoSVG'
+import NavHamburger from './NavHamburger'
 
 const fadeIn = keyframes`
   0% { opacity: 0; }
@@ -30,9 +31,18 @@ const NavContents = styled.div`
 
 const Nav = (props) => {
   const [fixedNav, setFixedNav] = useState(false)
+  const [useMobileNav, setUseMobileNav] = useState(true)
+  const windowWidthHandler = () => window.innerWidth > 600
+  const renderLinksOrHamburger = () => useMobileNav ? <NavLinks fixedNav={fixedNav} /> : <NavHamburger fill={fixedNav ? '#303030' : '#ffffff'} />
   useEffect(() => {
     document.addEventListener('scroll', () => {
       setFixedNav(window.pageYOffset > 600)
+    })
+  }, [])
+  useEffect(() => {
+    setUseMobileNav(windowWidthHandler())
+    window.addEventListener('resize', () => {
+      setUseMobileNav(windowWidthHandler())
     })
   }, [])
   return (
@@ -40,9 +50,11 @@ const Nav = (props) => {
       <CustomContainer maxW='1200px' pX='20px'>
         <NavContents fixedNav={fixedNav}>
           <Link href='#logo'>
-            <a><NavLogoSVG fill={fixedNav ? '#ae804c' : '#ffffff'} height='30' /></a>
+            <a><NavLogoSVG fill={fixedNav ? '#ae804c' : '#ffffff'} /></a>
           </Link>
-          <NavLinks fixedNav={fixedNav} />
+          {/* <NavLinks fixedNav={fixedNav} /> */}
+          {/* {<NavHamburger fill={fixedNav ? '#303030' : '#ffffff'} />} */}
+          {renderLinksOrHamburger()}
         </NavContents>
       </CustomContainer>
     </NavGrid>
