@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import PlayIconSVG from './PlayIconSVG'
 
 const VideoGrid = styled.div`
   width: 100%;
@@ -19,11 +20,31 @@ const VideoGrid = styled.div`
 
 const VideoBlock = styled.div`
   grid-area: video;
-  padding-top: 52.6%;
+  /* padding-top: 52.6%; */
+  width: 100%;
+  min-height: 300px;
   background-image: url('http://localhost:1337${props => props.coverImageURL}');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+`
+
+const PlayButton = styled.div`
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  filter: drop-shadow(0px 0px 15px #000);
+  transition: opacity 0.1s;
+
+  &:hover {
+    opacity: 1.0;
+  }
 `
 
 const VideoDescription = styled.div`
@@ -45,7 +66,11 @@ const VideoDescription = styled.div`
 const FeaturedVideo = ({ filmCollection, flipDirection }) => {
   return (
     <VideoGrid flipDirection={flipDirection}>
-      <VideoBlock coverImageURL={filmCollection.videoCover.formats.medium.url} />
+      <VideoBlock coverImageURL={filmCollection.videoCover.formats.medium.url}>
+        <PlayButton>
+          <PlayIconSVG fill='#ffffff' />
+        </PlayButton>
+      </VideoBlock>
       <VideoDescription>
         <h2>{filmCollection.title}</h2>
         <h5>{filmCollection.venue}</h5>
