@@ -82,7 +82,7 @@ const VideoFullScreen = ({ show, closeVideoFullScreen, videoUrl }) => (
     >
       <FullScreenOverlay>
         <CloseButton onClick={closeVideoFullScreen}>
-          <CloseSVG fill={props => props.theme.colors.charcoal} />
+          <CloseSVG fill='#303030' />
         </CloseButton>
         <VideoIFrame
           src={videoUrl + '?autoplay=1'}
