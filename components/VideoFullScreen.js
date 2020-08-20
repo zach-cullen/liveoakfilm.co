@@ -42,7 +42,7 @@ const ExpandTransition = styled.div`
   }
 `
 
-const VideoFullScreen = ({ show, closeClickHandler }) => (
+const VideoFullScreen = ({ show, closeVideoFullScreen, videoUrl }) => (
   <ExpandTransition>
     <CSSTransition
       in={show}
@@ -50,7 +50,7 @@ const VideoFullScreen = ({ show, closeClickHandler }) => (
       classNames='expand-'
       unmountOnExit
     >
-      <FullScreenOverlay onClick={closeClickHandler} />
+      <FullScreenOverlay onClick={closeVideoFullScreen} />
     </CSSTransition>
   </ExpandTransition>
 )

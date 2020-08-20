@@ -4,17 +4,23 @@ import VideoFullScreen from './VideoFullScreen'
 
 const VideoGallery = ({ filmCollections }) => {
   const [showVideoFullScreen, setShowVideoFullScreen] = useState(false)
-  const toggleShowVideoFullScreen = () => setShowVideoFullScreen(prevState => !prevState)
+  const [selectedVideoUrl, setSelectedVideoUrl] = useState(null)
+  const toggleShowVideoFullScreen = (videoUrl) => setShowVideoFullScreen(prevState => !prevState)
 
   return (
     <>
-      <VideoFullScreen show={showVideoFullScreen} closeClickHandler={toggleShowVideoFullScreen} />
+      <VideoFullScreen
+        show={showVideoFullScreen}
+        closeVideoFullScreen={toggleShowVideoFullScreen}
+        videoUrl={selectedVideoUrl}
+      />
       {filmCollections.map((filmCollection, i) => (
         <FeaturedVideo
           key={filmCollection.id}
           filmCollection={filmCollection}
           flipDirection={(i + 1) % 2 === 0}
-          playClickHandler={toggleShowVideoFullScreen}
+          showVideoFullScreen={toggleShowVideoFullScreen}
+          setSelectedVideoUrl={setSelectedVideoUrl}
         />
       ))}
     </>

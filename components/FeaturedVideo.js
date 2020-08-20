@@ -62,11 +62,16 @@ const VideoDescription = styled.div`
   }
 `
 
-const FeaturedVideo = ({ filmCollection, flipDirection, playClickHandler }) => {
+const FeaturedVideo = ({ filmCollection, flipDirection, showVideoFullScreen, setSelectedVideoUrl }) => {
+  const handlePlayButtonClick = () => {
+    showVideoFullScreen()
+    setSelectedVideoUrl(filmCollection.videoUrl)
+  }
+
   return (
     <VideoGrid flipDirection={flipDirection}>
       <VideoBlock coverImageURL={filmCollection.videoCover.formats.medium.url}>
-        <PlayButton onClick={playClickHandler}>
+        <PlayButton onClick={handlePlayButtonClick}>
           <PlayIconSVG fill='#ffffff' />
         </PlayButton>
       </VideoBlock>
