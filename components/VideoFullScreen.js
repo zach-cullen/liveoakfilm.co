@@ -52,25 +52,36 @@ const VideoIFrame = styled.iframe`
   padding: 20px;
 `
 
+const CloseButton = styled.div`
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 200;
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  background-color: hsla(0, 0%, 100%, 0.75);
+`
+
 const VideoFullScreen = ({ show, closeVideoFullScreen, videoUrl }) => (
-  <>
-    <ExpandTransition>
-      <CSSTransition
-        in={show}
-        timeout={500}
-        classNames='expand-'
-        unmountOnExit
-      >
-        <FullScreenOverlay onClick={closeVideoFullScreen}>
-          <VideoIFrame
-            src={videoUrl + '?autoplay=1'}
-            allow='autoplay'
-            frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen
-          />
-        </FullScreenOverlay>
-      </CSSTransition>
-    </ExpandTransition>
-  </>
+  <ExpandTransition>
+    <CSSTransition
+      in={show}
+      timeout={500}
+      classNames='expand-'
+      unmountOnExit
+    >
+      <FullScreenOverlay>
+        <CloseButton onClick={closeVideoFullScreen} />
+        <VideoIFrame
+          src={videoUrl + '?autoplay=1'}
+          allow='autoplay; fullscreen'
+          frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen
+        />
+      </FullScreenOverlay>
+    </CSSTransition>
+  </ExpandTransition>
 )
 
 export default VideoFullScreen
