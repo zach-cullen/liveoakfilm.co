@@ -43,15 +43,15 @@ const ExpandTransition = styled.div`
   }
 `
 
-const NavMobileExpanded = (props) => (
+const NavMobileExpanded = ({ show, close }) => (
   <ExpandTransition>
     <CSSTransition
-      in={props.inProp}
+      in={show}
       timeout={400}
       classNames='expand-'
       unmountOnExit
     >
-      <ExpandedOverlay onClick={props.handleClick} />
+      <ExpandedOverlay onClick={close} />
     </CSSTransition>
   </ExpandTransition>
 )

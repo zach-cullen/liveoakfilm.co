@@ -50,7 +50,7 @@ const Nav = (props) => {
   }, [])
   return (
     <>
-      <NavMobileExpanded inProp={expandMobileNav} handleClick={toggleExpandMobileNav} />
+      <NavMobileExpanded show={expandMobileNav} close={toggleExpandMobileNav} />
       <NavGrid fixedNav={fixedNav}>
         <CustomContainer maxW='1200px' pX='20px'>
           <NavContents fixedNav={fixedNav}>
