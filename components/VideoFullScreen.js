@@ -43,17 +43,13 @@ const FullScreenOverlay = styled.div`
 `
 
 const VideoIFrame = styled.iframe`
-  position: fixed;
-  z-index: 200;
-  top: 50%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 90vw;
-  height: 50.85vw;
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
   box-sizing: border-box;
-  border: solid 10px #fff;
-  background-color: #fff;
+  border: none;
+  padding: 20px;
 `
 
 const VideoFullScreen = ({ show, closeVideoFullScreen, videoUrl }) => (
