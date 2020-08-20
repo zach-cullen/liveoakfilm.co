@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { CSSTransition } from 'react-transition-group'
+import CloseSVG from './CloseSVG'
 
 const ExpandTransition = styled.div`
   .expand--enter {
@@ -58,10 +59,17 @@ const CloseButton = styled.div`
   top: 10px;
   right: 10px;
   z-index: 200;
-  width: 50px;
-  height: 50px;
-  border-radius: 30px;
-  background-color: hsla(0, 0%, 100%, 0.75);
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: #fff;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
 `
 
 const VideoFullScreen = ({ show, closeVideoFullScreen, videoUrl }) => (
@@ -73,7 +81,9 @@ const VideoFullScreen = ({ show, closeVideoFullScreen, videoUrl }) => (
       unmountOnExit
     >
       <FullScreenOverlay>
-        <CloseButton onClick={closeVideoFullScreen} />
+        <CloseButton onClick={closeVideoFullScreen}>
+          <CloseSVG fill={props => props.theme.colors.charcoal} />
+        </CloseButton>
         <VideoIFrame
           src={videoUrl + '?autoplay=1'}
           allow='autoplay; fullscreen'
