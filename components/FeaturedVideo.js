@@ -20,7 +20,6 @@ const VideoGrid = styled.div`
 
 const VideoBlock = styled.div`
   grid-area: video;
-  /* padding-top: 52.6%; */
   width: 100%;
   min-height: 300px;
   background-image: url('http://localhost:1337${props => props.coverImageURL}');
@@ -63,11 +62,11 @@ const VideoDescription = styled.div`
   }
 `
 
-const FeaturedVideo = ({ filmCollection, flipDirection }) => {
+const FeaturedVideo = ({ filmCollection, flipDirection, playClickHandler }) => {
   return (
     <VideoGrid flipDirection={flipDirection}>
       <VideoBlock coverImageURL={filmCollection.videoCover.formats.medium.url}>
-        <PlayButton>
+        <PlayButton onClick={playClickHandler}>
           <PlayIconSVG fill='#ffffff' />
         </PlayButton>
       </VideoBlock>
