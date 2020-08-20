@@ -6,7 +6,7 @@ import Button from '../components/Button'
 import PageSection from '../components/PageSection'
 import SectionContainer from '../components/SectionContainer'
 import CustomContainer from '../components/CustomContainer'
-import FeaturedVideo from '../components/FeaturedVideo'
+import VideoGallery from '../components/VideoGallery'
 import Text from '../components/Text'
 
 export default function Home ({ pageContent }) {
@@ -43,9 +43,7 @@ export default function Home ({ pageContent }) {
           bgColor={props => props.theme.colors.khaki}
         >
           <SectionContainer>
-            {pageContent.film_collections.map((filmCollection, i) => (
-              <FeaturedVideo key={filmCollection.id} filmCollection={filmCollection} flipDirection={(i + 1) % 2 === 0} />
-            ))}
+            <VideoGallery filmCollections={pageContent.film_collections} />
           </SectionContainer>
         </PageSection>
         <PageSection />
