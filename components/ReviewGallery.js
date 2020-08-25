@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const ReviewGalleryContainer = styled.div`
+const ReviewGalleryGrid = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -34,20 +34,30 @@ const Review = styled.div`
   }
 `
 
+const Title = styled.h3`
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px;
+`
+
 const ReviewGallery = ({ reviews }) => (
-  <ReviewGalleryContainer>
-    {reviews.map(review => (
-      <Review key={review.id}>
-        <div>
-          <ReviewImg reviewImageUrl={review.image[0].url} />
-          <p>{review.name}</p>
-        </div>
-        <ReviewText>
-          <h4>"{review.review}"</h4>
-        </ReviewText>
-      </Review>
-    ))}
-  </ReviewGalleryContainer>
+  <>
+    <Title>What They Said:</Title>
+    <ReviewGalleryGrid>
+      {reviews.map(review => (
+        <Review key={review.id}>
+          <div>
+            <ReviewImg reviewImageUrl={review.image[0].url} />
+            <p>{review.name}</p>
+          </div>
+          <ReviewText>
+            <h4>"{review.review}"</h4>
+          </ReviewText>
+        </Review>
+      ))}
+    </ReviewGalleryGrid>
+  </>
 )
 
 export default ReviewGallery
