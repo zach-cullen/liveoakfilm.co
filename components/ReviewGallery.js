@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import LeafDetail from './LeafDetail'
 
 const ReviewGalleryGrid = styled.div`
   width: 100%;
@@ -34,16 +35,18 @@ const Review = styled.div`
   }
 `
 
-const Title = styled.h3`
+const GalleryTitle = styled.h3`
   display: block;
   width: 100%;
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 60px;
 `
 
 const ReviewGallery = ({ reviews }) => (
   <>
-    <Title>What They Said:</Title>
+    <LeafDetail />
+    <GalleryTitle>What They Said:</GalleryTitle>
     <ReviewGalleryGrid>
       {reviews.map(review => (
         <Review key={review.id}>
