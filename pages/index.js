@@ -46,6 +46,9 @@ export default function Home ({ pageContent }) {
           <CustomContainer maxW='1200px'>
             <VideoGallery filmCollections={pageContent.film_collections} />
           </CustomContainer>
+          <Button themeColor='charcoal'>
+              Check Availability
+          </Button>
         </PageSection>
         <PageSection>
           <SectionContainer pY='80px'>
