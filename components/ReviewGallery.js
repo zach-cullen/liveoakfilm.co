@@ -8,7 +8,7 @@ const ReviewGalleryContainer = styled.div`
 
   @media (max-width: 720px) {
     grid-template-columns: 1fr;
-    grid-row-gap: 20px;
+    grid-row-gap: 60px;
   }
 `
 
@@ -23,7 +23,6 @@ const ReviewImg = styled.div`
 
 const ReviewText = styled.div`
   width: 100%;
-  height: 200px;
   margin-top: 10px;
 `
 
