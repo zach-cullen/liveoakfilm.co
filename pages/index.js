@@ -48,7 +48,7 @@ export default function Home ({ pageContent }) {
           </SectionContainer>
         </PageSection>
         <PageSection>
-          <SectionContainer>
+          <SectionContainer pY='80px'>
             <ReviewGallery reviews={pageContent.reviews} />
           </SectionContainer>
         </PageSection>
