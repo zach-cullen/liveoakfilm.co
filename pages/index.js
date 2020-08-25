@@ -43,7 +43,7 @@ export default function Home ({ pageContent }) {
         <PageSection
           bgColor={props => props.theme.colors.khaki}
         >
-          <CustomContainer maxW='1200px'>
+          <CustomContainer maxW='1200px' pX='20px'>
             <VideoGallery filmCollections={pageContent.film_collections} />
           </CustomContainer>
           <Button themeColor='charcoal'>
