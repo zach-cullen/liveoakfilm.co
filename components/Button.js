@@ -2,8 +2,9 @@ import styled from 'styled-components'
 
 const Button = styled.button`
   cursor: pointer;
+  display: block;
   padding: 20px 25px;
-  margin: 10px 0;
+  margin: 10px auto;
   box-sizing: border-box;
   border: solid 2px ${props => props.theme.colors[props.themeColor]};
   background-color: transparent;
