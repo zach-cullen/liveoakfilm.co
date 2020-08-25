@@ -7,6 +7,7 @@ import PageSection from '../components/PageSection'
 import SectionContainer from '../components/SectionContainer'
 import CustomContainer from '../components/CustomContainer'
 import VideoGallery from '../components/VideoGallery'
+import ReviewGallery from '../components/ReviewGallery'
 import Text from '../components/Text'
 
 export default function Home ({ pageContent }) {
@@ -46,7 +47,11 @@ export default function Home ({ pageContent }) {
             <VideoGallery filmCollections={pageContent.film_collections} />
           </SectionContainer>
         </PageSection>
-        <PageSection />
+        <PageSection>
+          <SectionContainer>
+            <ReviewGallery reviews={pageContent.reviews} />
+          </SectionContainer>
+        </PageSection>
       </main>
       <Footer />
     </>
