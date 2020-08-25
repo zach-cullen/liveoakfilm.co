@@ -35,7 +35,7 @@ export default function Home ({ pageContent }) {
                 These are the memories that you want to last forever. This is the feeling that you don't want to forget. We are here to help you capture the best moments of your life because a love that is remembered is a <strong>love that leaves a legacy.</strong>
               </Text>
             </CustomContainer>
-            <Button>
+            <Button themeColor='amber'>
               Let us tell your story
             </Button>
           </SectionContainer>
