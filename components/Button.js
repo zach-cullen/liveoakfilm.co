@@ -5,9 +5,9 @@ const Button = styled.button`
   padding: 20px 25px;
   margin: 10px 0;
   box-sizing: border-box;
-  border: solid 2px ${props => props.theme.colors.amber};
+  border: solid 2px ${props => props.theme.colors[props.themeColor]};
   background-color: transparent;
-  color: ${props => props.theme.colors.amber};
+  color: ${props => props.theme.colors[props.themeColor]};
   font-family: Montserrat, sans-serif;
   font-size: 11px;
   text-transform: uppercase;
@@ -17,15 +17,13 @@ const Button = styled.button`
 
   &:hover {
     color: #fff;
-    background-color: ${props => props.theme.colors.amber};
+    background-color: ${props => props.theme.colors[props.themeColor]};
   }
 
   &:focus {
     outline: none;
-    border: solid 2px ${props => props.theme.colors.amber};
+    border: solid 2px ${props => props.theme.colors[props.themeColor]};
   }
-
-
 `
 
 export default Button
