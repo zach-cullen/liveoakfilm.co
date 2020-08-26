@@ -23,7 +23,7 @@ const FooterNavGrid = styled.div`
   grid-column-gap: 20px;
 
   @media (max-width: 720px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     margin: 40px 0;
   }
 `
