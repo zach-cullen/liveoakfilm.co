@@ -15,15 +15,14 @@ const HeroContent = styled.div`
   position: absolute;
   width: 50%;
   max-width: 300px;
-  height: 30%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  background-image: url('/images/liveoakfilms-logo-banner.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+
+  img {
+    width: 100%;
+  }
 `
 
 const HeroOverlay = styled.div`
@@ -56,7 +55,7 @@ const BackgroundVideoIframe = styled.iframe`
   transform: translate(-50%, -10%);
 `
 
-const Hero = ({ videoUrl, screenPercentage }) => {
+const Hero = ({ videoUrl, screenPercentage, overlayImgUrl }) => {
   const iframeRef = useRef(null)
   const applyParallax = (ref, parallaxRate) => {
     if (ref.current !== null) ref.current.style.top = `-${window.pageYOffset * parallaxRate}px`
@@ -66,7 +65,9 @@ const Hero = ({ videoUrl, screenPercentage }) => {
   }, [])
   return (
     <HeroDiv screenPercentage={screenPercentage}>
-      <HeroContent />
+      <HeroContent>
+        <img src={overlayImgUrl} />
+      </HeroContent>
       <HeroOverlay>
         <BackgroundVideoWrapper>
           <BackgroundVideoIframe
