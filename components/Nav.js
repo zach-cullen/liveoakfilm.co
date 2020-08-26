@@ -54,7 +54,7 @@ const Nav = (props) => {
       <NavGrid fixedNav={fixedNav}>
         <CustomContainer maxW='1200px' pX='20px'>
           <NavContents fixedNav={fixedNav}>
-            <Link href='#logo'>
+            <Link href='/'>
               <a><NavLogoSVG fill={fixedNav ? '#ae804c' : '#ffffff'} /></a>
             </Link>
             {renderLinksOrHamburger()}

@@ -38,7 +38,7 @@ const StyledNavButton = styled.a`
 
 const NavLinks = ({ fixedNav }) => (
   <NavLinksContainer>
-    <Link href='#home' passHref>
+    <Link href='/' passHref>
       <StyledLink fixedNav={fixedNav}>Home</StyledLink>
     </Link>
     <Link href='/about' passHref>
