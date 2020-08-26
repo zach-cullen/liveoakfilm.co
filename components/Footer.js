@@ -20,6 +20,11 @@ const FooterNavGrid = styled.div`
   display: grid; 
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   grid-column-gap: 20px;
+
+  @media (max-width: 720px) {
+    grid-template-columns: 1fr;
+    margin: 40px 0;
+  }
 `
 
 const StyledFooterLink = styled.a`
@@ -31,6 +36,10 @@ const StyledFooterLink = styled.a`
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
+
+  @media (max-width: 720px) {
+    margin: 20px 0;
+  }
 `
 
 const Footer = () => (
