@@ -68,10 +68,10 @@ const Footer = () => (
       </LogoWrapper>
       <LineBreak color='#fff' mT='50px' />
       <FooterNavGrid>
-        <Link href='#home'>
+        <Link href='/'>
           <StyledFooterLink>Home</StyledFooterLink>
         </Link>
-        <Link href='#about'>
+        <Link href='/about'>
           <StyledFooterLink>About</StyledFooterLink>
         </Link>
         <Link href='#portfolio'>
