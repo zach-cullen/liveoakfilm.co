@@ -13,15 +13,15 @@ const HeroDiv = styled.div`
 `
 const HeroContent = styled.div`
   position: absolute;
-  width: 50%;
-  max-width: 300px;
+  height: 100px;
+  max-width: 50%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
 
   img {
-    width: 100%;
+    height: 100%;
   }
 `
 
