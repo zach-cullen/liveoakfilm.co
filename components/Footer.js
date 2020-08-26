@@ -8,6 +8,7 @@ const StyledFooter = styled.footer`
   width: 100%;
   box-sizing: border-box;
   padding: 50px 0;
+  color: #fff;
   background-color: ${props => props.theme.colors.charcoal};
 `
 
@@ -42,6 +43,23 @@ const StyledFooterLink = styled.a`
   }
 `
 
+const FooterFinePrint = styled.h4`
+  margin-top: 80px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+
+  a {
+    letter-spacing: 0.1em;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`
+
 const Footer = () => (
   <StyledFooter>
     <SectionContainer pY='50px'>\
@@ -63,6 +81,11 @@ const Footer = () => (
           <StyledFooterLink>Inquire</StyledFooterLink>
         </Link>
       </FooterNavGrid>
+      <FooterFinePrint>
+        Copyright 2020, Live Oak Films, LLC
+        <br />
+        <Link href='#a'>Privacy Policy</Link> | <Link href='#b'>Terms & Conditions</Link>
+      </FooterFinePrint>
     </SectionContainer>
   </StyledFooter>
 )
