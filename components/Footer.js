@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import SectionContainer from './SectionContainer'
 import NavLogoSVG from './NavLogoSVG'
+import LineBreak from './LineBreak'
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -20,6 +21,7 @@ const Footer = () => (
       <LogoWrapper>
         <NavLogoSVG fill='#fff' />
       </LogoWrapper>
+      <LineBreak color='#fff' mT='50px' />
     </SectionContainer>
   </StyledFooter>
 )
