@@ -2,6 +2,9 @@ import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
 import PageSection from '../components/PageSection'
+import CustomContainer from '../components/CustomContainer'
+import Text from '../components/Text'
+import LeafDetail from '../components/LeafDetail'
 
 export default function About ({ pageContent }) {
   return (
@@ -12,7 +15,15 @@ export default function About ({ pageContent }) {
         overlayImgUrl='/images/capture-more.png'
         videoUrl='https://player.vimeo.com/video/227477654?background=1&autoplay=1&loop=1&byline=0&title=0'
       />
-      <PageSection />
+      <PageSection>
+        <CustomContainer textAlign='center' maxW='720px' pX='30px'>
+          <h2>The Live Oak</h2>
+          <Text pY='20px'>
+            Our studio is named after one of nature’s great wonders, a beautiful and massive tree that grows for hundreds of years, outliving generations. We hope that your wedding film, too, will last for generations as a story of love that your legacy can be built on.
+          </Text>
+          <LeafDetail />
+        </CustomContainer>
+      </PageSection>
       <Footer />
     </>
   )
