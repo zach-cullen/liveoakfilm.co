@@ -16,7 +16,7 @@ export default function About ({ pageContent }) {
         videoUrl='https://player.vimeo.com/video/227477654?background=1&autoplay=1&loop=1&byline=0&title=0'
       />
       <PageSection>
-        <CustomContainer textAlign='center' maxW='720px' pX='30px'>
+        <CustomContainer textAlign='center' maxW='720px' pX='30px' pY='40px'>
           <h1>The Inspiration</h1>
           <Text pY='20px'>
             Our studio is named after one of nature’s great wonders: A beautiful and massive tree that grows for hundreds of years, outliving generations. We hope that your wedding film, too, will last for generations as a story of love that your legacy can be built on.
@@ -25,8 +25,13 @@ export default function About ({ pageContent }) {
         </CustomContainer>
       </PageSection>
       <PageSection bgColor={props => props.theme.colors.khaki}>
-        <CustomContainer maxW='1200px' pX='30px' textAlign='center'>
+        <CustomContainer maxW='1200px' pX='30px' pY='40px' textAlign='center'>
           <h1>The Process</h1>
+        </CustomContainer>
+      </PageSection>
+      <PageSection>
+        <CustomContainer maxW='1200px' pX='30px' pY='40px' textAlign='center'>
+          <h1>The Filmmakers</h1>
         </CustomContainer>
       </PageSection>
       <Footer />
