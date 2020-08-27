@@ -17,11 +17,16 @@ export default function About ({ pageContent }) {
       />
       <PageSection>
         <CustomContainer textAlign='center' maxW='720px' pX='30px'>
-          <h2>The Live Oak</h2>
+          <h1>The Inspiration</h1>
           <Text pY='20px'>
-            Our studio is named after one of nature’s great wonders, a beautiful and massive tree that grows for hundreds of years, outliving generations. We hope that your wedding film, too, will last for generations as a story of love that your legacy can be built on.
+            Our studio is named after one of nature’s great wonders: A beautiful and massive tree that grows for hundreds of years, outliving generations. We hope that your wedding film, too, will last for generations as a story of love that your legacy can be built on.
           </Text>
           <LeafDetail />
+        </CustomContainer>
+      </PageSection>
+      <PageSection bgColor={props => props.theme.colors.khaki}>
+        <CustomContainer maxW='1200px' pX='30px' textAlign='center'>
+          <h1>The Process</h1>
         </CustomContainer>
       </PageSection>
       <Footer />
