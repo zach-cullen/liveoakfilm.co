@@ -13,15 +13,22 @@ const HeroDiv = styled.div`
 `
 const HeroContent = styled.div`
   position: absolute;
-  height: 100px;
-  max-width: 50%;
+  width: 80%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  text-align: center;
 
   img {
-    height: 100%;
+    display: block;
+    max-height: 100px;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 720px) {
+    width: 90%;
   }
 `
 
