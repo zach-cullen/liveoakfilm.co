@@ -32,19 +32,19 @@ const CardText = styled.h4`
 const ProcessCards = () => (
   <CardGrid>
     <ProcessCard>
-      <CardTitle>Tell us your story.</CardTitle>
+      <CardTitle>1. Tell us your story.</CardTitle>
       <CardText>
         We want to get to know you, the people you love and the moments you can't wait for. Then, we'll work together to make sure the day flows effortlessly.
       </CardText>
     </ProcessCard>
     <ProcessCard>
-      <CardTitle>Have the best day.</CardTitle>
+      <CardTitle>2. Have the best day.</CardTitle>
       <CardText>
         Our first priority is that you get to enjoy and take in your special day. We promise that if you're having fun then we are absolutely making a great video.
       </CardText>
     </ProcessCard>
     <ProcessCard>
-      <CardTitle>Laugh, cry, share.</CardTitle>
+      <CardTitle>3. Laugh, cry, share.</CardTitle>
       <CardText>
         Our edits are simple, we aim to let your moments speak for themselves. We capture the full range of emotion from silly to sappy and everything inbetween.
       </CardText>
