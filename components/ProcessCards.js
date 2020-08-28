@@ -34,7 +34,7 @@ const ProcessCards = () => (
     <ProcessCard>
       <CardTitle>1. Tell us your story.</CardTitle>
       <CardText>
-        We want to get to know you, the people you love and the moments you can't wait for. Then, we'll work together to make sure the day flows effortlessly.
+        Tell us about the people you love and the moments you can't wait for. Then, we'll work together to make sure your event timeline flows effortlessly.
       </CardText>
     </ProcessCard>
     <ProcessCard>
@@ -46,7 +46,7 @@ const ProcessCards = () => (
     <ProcessCard>
       <CardTitle>3. Laugh, cry, share.</CardTitle>
       <CardText>
-        Our edits are simple, we aim to let your moments speak for themselves. We capture the full range of emotion from silly to sappy and everything inbetween.
+        We aim to let your moments speak for themselves. Your film will capture the full range of emotion from silly to sappy and everything inbetween.
       </CardText>
     </ProcessCard>
   </CardGrid>
