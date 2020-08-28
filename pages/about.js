@@ -7,6 +7,7 @@ import Text from '../components/Text'
 import LeafDetail from '../components/LeafDetail'
 import ProcessCards from '../components/ProcessCards'
 import Button from '../components/Button'
+import TeamMembers from '../components/TeamMembers'
 
 export default function About ({ pageContent }) {
   return (
@@ -38,6 +39,7 @@ export default function About ({ pageContent }) {
       <PageSection>
         <CustomContainer maxW='1200px' pX='30px' pY='40px' textAlign='center'>
           <h1>The Filmmakers</h1>
+          <TeamMembers />
         </CustomContainer>
       </PageSection>
       <Footer />
