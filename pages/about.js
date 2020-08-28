@@ -39,7 +39,7 @@ export default function About ({ pageContent }) {
       <PageSection>
         <CustomContainer maxW='1200px' pX='30px' pY='40px' textAlign='center'>
           <h1>The Filmmakers</h1>
-          <TeamMembers />
+          <TeamMembers teamMembers={pageContent.team_members} />
         </CustomContainer>
       </PageSection>
       <Footer />
