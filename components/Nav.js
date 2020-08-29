@@ -36,7 +36,7 @@ const Nav = (props) => {
   const [expandMobileNav, setExpandMobileNav] = useState(false)
   const toggleExpandMobileNav = () => setExpandMobileNav(prevState => !prevState)
   const windowWidthHandler = () => window.innerWidth > 600
-  const renderLinksOrHamburger = () => useMobileNav ? <NavLinks fixedNav={fixedNav} /> : <NavHamburger handleClick={toggleExpandMobileNav} fill={fixedNav ? '#303030' : '#ffffff'} />
+  const renderLinksOrHamburger = () => useMobileNav ? <NavLinks fixedNav={fixedNav} noHero={props.noHero} /> : <NavHamburger handleClick={toggleExpandMobileNav} fill={fixedNav ? '#303030' : '#ffffff'} />
   useEffect(() => {
     document.addEventListener('scroll', () => {
       setFixedNav(window.pageYOffset > 600)
@@ -55,7 +55,7 @@ const Nav = (props) => {
         <CustomContainer maxW='1200px' pX='20px'>
           <NavContents fixedNav={fixedNav}>
             <Link href='/'>
-              <a><NavLogoSVG fill={fixedNav ? '#ae804c' : '#ffffff'} /></a>
+              <a><NavLogoSVG fill={fixedNav ? '#ae804c' : props.noHero ? '#303030' : '#ffffff'} /></a>
             </Link>
             {renderLinksOrHamburger()}
           </NavContents>
