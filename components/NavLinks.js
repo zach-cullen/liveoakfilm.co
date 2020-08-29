@@ -41,13 +41,13 @@ const NavLinks = ({ fixedNav, noHero }) => (
     <Link href='/' passHref>
       <StyledLink fixedNav={fixedNav} noHero={noHero}>Home</StyledLink>
     </Link>
-    <Link href='/about' passHref>
+    <Link href='about' passHref>
       <StyledLink fixedNav={fixedNav} noHero={noHero}>About</StyledLink>
     </Link>
-    <Link href='/portfolio' passHref>
+    <Link href='portfolio' passHref>
       <StyledLink fixedNav={fixedNav} noHero={noHero}>Portfolio</StyledLink>
     </Link>
-    <Link href='#inquire' passHref>
+    <Link href='inquire' passHref>
       <StyledNavButton fixedNav={fixedNav} noHero={noHero}>Inquire</StyledNavButton>
     </Link>
   </NavLinksContainer>
