@@ -71,13 +71,13 @@ const Footer = () => (
         <Link href='/'>
           <StyledFooterLink>Home</StyledFooterLink>
         </Link>
-        <Link href='/about'>
+        <Link href='about'>
           <StyledFooterLink>About</StyledFooterLink>
         </Link>
-        <Link href='/portfolio'>
+        <Link href='portfolio'>
           <StyledFooterLink>Portfolio</StyledFooterLink>
         </Link>
-        <Link href='#contact'>
+        <Link href='inquire'>
           <StyledFooterLink>Inquire</StyledFooterLink>
         </Link>
       </FooterNavGrid>
