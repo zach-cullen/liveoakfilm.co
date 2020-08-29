@@ -6,7 +6,7 @@ import CustomContainer from '../components/CustomContainer'
 export default function Portfolio ({ pageContent }) {
   return (
     <>
-      <Nav />
+      <Nav noHero />
       <PageSection />
       <PageSection bgColor={props => props.theme.colors.khaki}>
         <CustomContainer maxW='1200px' pX='30px'>
