@@ -13,7 +13,7 @@ const StyledLink = styled.a`
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: ${props => props.fixedNav ? props.theme.colors.charcoal : '#fff'};
+  color: ${props => props.fixedNav || props.noHero ? props.theme.colors.charcoal : '#fff'};
   margin-left: 24px;
 `
 
@@ -27,7 +27,7 @@ const StyledNavButton = styled.a`
   letter-spacing: 0.2em;
   color: ${props => props.theme.colors.charcoal};
   margin-left: 24px;
-  background-color: ${props => props.fixedNav ? props.theme.colors.khaki : '#fff'};
+  background-color: ${props => props.fixedNav || props.noHero ? props.theme.colors.khaki : '#fff'};
   transition: background-color 0.2s, color 0.2s;
 
   &:hover {
@@ -36,19 +36,19 @@ const StyledNavButton = styled.a`
   }
 `
 
-const NavLinks = ({ fixedNav }) => (
+const NavLinks = ({ fixedNav, noHero }) => (
   <NavLinksContainer>
     <Link href='/' passHref>
-      <StyledLink fixedNav={fixedNav}>Home</StyledLink>
+      <StyledLink fixedNav={fixedNav} noHero={noHero}>Home</StyledLink>
     </Link>
     <Link href='/about' passHref>
-      <StyledLink fixedNav={fixedNav}>About</StyledLink>
+      <StyledLink fixedNav={fixedNav} noHero={noHero}>About</StyledLink>
     </Link>
     <Link href='/portfolio' passHref>
-      <StyledLink fixedNav={fixedNav}>Portfolio</StyledLink>
+      <StyledLink fixedNav={fixedNav} noHero={noHero}>Portfolio</StyledLink>
     </Link>
     <Link href='#inquire' passHref>
-      <StyledNavButton fixedNav={fixedNav}>Inquire</StyledNavButton>
+      <StyledNavButton fixedNav={fixedNav} noHero={noHero}>Inquire</StyledNavButton>
     </Link>
   </NavLinksContainer>
 )
