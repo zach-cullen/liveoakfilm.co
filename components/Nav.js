@@ -34,35 +34,28 @@ const Nav = (props) => {
   const [fixedNav, setFixedNav] = useState(false)
   const [useMobileNav, setUseMobileNav] = useState(true)
   const [expandMobileNav, setExpandMobileNav] = useState(false)
+
   const toggleExpandMobileNav = () => setExpandMobileNav(prevState => !prevState)
   const windowWidthHandler = () => window.innerWidth > 600
-  // const renderLinksOrHamburger = () => {
-  //   if (useMobileNav) {
-  //     return (
-  //       <NavLinks fixedNav={fixedNav} noHero={props.noHero} />
-  //     )
-  //   } else {
-  //     return (
-  //       <NavHamburger handleClick={toggleExpandMobileNav} fill={fixedNav || props.noHero ? '#303030' : '#ffffff'} />
-  //     )
-  //   }
-  // }
   const renderLinksOrHamburger = () => {
     return useMobileNav
       ? <NavLinks fixedNav={fixedNav} noHero={props.noHero} />
       : <NavHamburger handleClick={toggleExpandMobileNav} fill={fixedNav || props.noHero ? '#303030' : '#ffffff'} />
   }
+
   useEffect(() => {
     document.addEventListener('scroll', () => {
       setFixedNav(window.pageYOffset > 600)
     })
   }, [])
+
   useEffect(() => {
     setUseMobileNav(windowWidthHandler())
     window.addEventListener('resize', () => {
       setUseMobileNav(windowWidthHandler())
     })
   }, [])
+
   return (
     <>
       <NavMobileExpanded show={expandMobileNav} close={toggleExpandMobileNav} />
