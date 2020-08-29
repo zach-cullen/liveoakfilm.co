@@ -1,8 +1,10 @@
 import styled from 'styled-components'
+import Link from 'next/link'
 
-const Button = styled.button`
+const Button = styled.a`
   cursor: pointer;
   display: block;
+  width: max-content;
   padding: 20px 25px;
   margin: 10px auto;
   box-sizing: border-box;
@@ -27,4 +29,12 @@ const Button = styled.button`
   }
 `
 
-export default Button
+const LinkButton = ({ themeColor, text, href }) => (
+  <Link href={href} passHref>
+    <Button themeColor={themeColor}>
+      {text}
+    </Button>
+  </Link>
+)
+
+export default LinkButton

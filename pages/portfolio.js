@@ -3,7 +3,7 @@ import Footer from '../components/Footer'
 import PageSection from '../components/PageSection'
 import CustomContainer from '../components/CustomContainer'
 import VideoGallery from '../components/VideoGallery'
-import Button from '../components/Button'
+import LinkButton from '../components/LinkButton'
 
 export default function Portfolio ({ pageContent }) {
   return (
@@ -13,7 +13,7 @@ export default function Portfolio ({ pageContent }) {
       <PageSection>
         <CustomContainer maxW='1200px' pX='30px'>
           <VideoGallery filmCollections={pageContent.film_collections} />
-          <Button themeColor='charcoal'>Let's Make a Movie</Button>
+          <LinkButton text="Let's Make a Movie" href='inquire' themeColor='charcoal'>Let's Make a Movie</LinkButton>
         </CustomContainer>
       </PageSection>
       <Footer />

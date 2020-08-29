@@ -6,7 +6,7 @@ import CustomContainer from '../components/CustomContainer'
 import Text from '../components/Text'
 import LeafDetail from '../components/LeafDetail'
 import ProcessCards from '../components/ProcessCards'
-import Button from '../components/Button'
+import LinkButton from '../components/LinkButton'
 import TeamMembers from '../components/TeamMembers'
 
 export default function About ({ pageContent }) {
@@ -31,9 +31,9 @@ export default function About ({ pageContent }) {
         <CustomContainer maxW='1200px' pX='30px' pY='40px' textAlign='center'>
           <h1>The Process</h1>
           <ProcessCards />
-          <Button themeColor='charcoal'>
+          <LinkButton text="Let's get started" themeColor='charcoal' href='inquire'>
             Let's get started
-          </Button>
+          </LinkButton>
         </CustomContainer>
       </PageSection>
       <PageSection>

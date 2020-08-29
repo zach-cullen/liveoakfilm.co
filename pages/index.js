@@ -1,8 +1,7 @@
-// import Head from 'next/head'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
-import Button from '../components/Button'
+import LinkButton from '../components/LinkButton'
 import PageSection from '../components/PageSection'
 import SectionContainer from '../components/SectionContainer'
 import CustomContainer from '../components/CustomContainer'
@@ -30,21 +29,17 @@ export default function Home ({ pageContent }) {
             <Text pY='30px'>
               These are the memories that you want to last forever. This is the feeling that you don't want to forget. We are here to help you capture the best moments of your life because a love that is remembered is a <strong>love that leaves a legacy.</strong>
             </Text>
-            <Button themeColor='amber'>
-              Let us tell your story
-            </Button>
+            <LinkButton text='Let us tell your story' themeColor='amber' href='inquire' />
           </CustomContainer>
         </SectionContainer>
       </PageSection>
       <PageSection
         bgColor={props => props.theme.colors.khaki}
       >
-        <CustomContainer maxW='1200px' pX='20px'>
+        <CustomContainer maxW='1200px' pX='20px' textAlign='center'>
           <VideoGallery filmCollections={pageContent.film_collections} />
+          <LinkButton text='View More Films' themeColor='charcoal' href='portfolio' />
         </CustomContainer>
-        <Button themeColor='charcoal'>
-            Check Availability
-        </Button>
       </PageSection>
       <PageSection>
         <SectionContainer pY='80px'>
