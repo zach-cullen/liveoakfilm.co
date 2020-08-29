@@ -8,7 +8,7 @@ export default function Portfolio ({ pageContent }) {
   return (
     <>
       <Nav noHero />
-      <PageSection />
+      <PageSection pY='40px' />
       <PageSection>
         <CustomContainer maxW='1200px' pX='30px'>
           <VideoGallery filmCollections={pageContent.film_collections} />
