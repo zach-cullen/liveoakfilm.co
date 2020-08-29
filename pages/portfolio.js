@@ -17,3 +17,13 @@ export default function Portfolio ({ pageContent }) {
     </>
   )
 }
+
+export async function getStaticProps () {
+  const res = await fetch('http://localhost:1337/portfolio')
+  const pageContent = await res.json()
+  return {
+    props: {
+      pageContent
+    }
+  }
+}
