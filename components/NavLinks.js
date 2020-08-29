@@ -44,7 +44,7 @@ const NavLinks = ({ fixedNav }) => (
     <Link href='/about' passHref>
       <StyledLink fixedNav={fixedNav}>About</StyledLink>
     </Link>
-    <Link href='#portfolio' passHref>
+    <Link href='/portfolio' passHref>
       <StyledLink fixedNav={fixedNav}>Portfolio</StyledLink>
     </Link>
     <Link href='#inquire' passHref>

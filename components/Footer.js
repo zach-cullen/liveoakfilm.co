@@ -74,7 +74,7 @@ const Footer = () => (
         <Link href='/about'>
           <StyledFooterLink>About</StyledFooterLink>
         </Link>
-        <Link href='#portfolio'>
+        <Link href='/portfolio'>
           <StyledFooterLink>Portfolio</StyledFooterLink>
         </Link>
         <Link href='#contact'>
