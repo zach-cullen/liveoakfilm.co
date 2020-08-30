@@ -73,10 +73,12 @@ const Hero = ({ videoUrl, screenPercentage, overlayImgUrl }) => {
   const backgroundRef = useRef(null)
   const handleIframeLoad = () => setIframeLoaded(true)
   const applyParallax = (ref, parallaxRate) => {
-    if (ref.current !== null) ref.current.style.top = `-${window.pageYOffset * parallaxRate}px`
+    if (ref.current !== null) { ref.current.style.top = `-${window.pageYOffset * parallaxRate}px` }
   }
   useEffect(() => {
-    document.addEventListener('scroll', () => applyParallax(backgroundRef, 0.5))
+    const scrollHandler = () => applyParallax(backgroundRef, 0.5)
+    document.addEventListener('scroll', scrollHandler)
+    return () => document.removeEventListener('scroll', scrollHandler)
   }, [])
   return (
     <HeroDiv screenPercentage={screenPercentage}>
