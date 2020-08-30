@@ -13,7 +13,7 @@ export default function Portfolio ({ pageContent }) {
       <PageSection>
         <CustomContainer maxW='1200px' pX='30px'>
           <VideoGallery filmCollections={pageContent.film_collections} />
-          <LinkButton text="Let's Make a Movie" href='inquire' themeColor='charcoal'>Let's Make a Movie</LinkButton>
+          <LinkButton text="Inquire Now" href='inquire' themeColor='charcoal'>Let's Make a Movie</LinkButton>
         </CustomContainer>
       </PageSection>
       <Footer />
