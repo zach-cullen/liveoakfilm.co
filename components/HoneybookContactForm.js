@@ -29,8 +29,8 @@ export default function HoneybookContactForm () {
   }
 
   useEffect(() => {
-    const honeybookScriptLoaded = !!document.querySelector('#honeybook-script')
-    // external script prevents multiple calls, so we must reload page if this is not the first visit
+    const honeybookScriptLoaded = !!document.querySelector('#hb-script')
+    // external script prevents multiple calls, so we must reload page if this is not the first visit and next has cached script
     honeybookScriptLoaded ? document.location.reload() : loadHoneybookForm()
   })
 
