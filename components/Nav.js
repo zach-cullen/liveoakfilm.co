@@ -36,11 +36,10 @@ const Nav = (props) => {
   const [expandMobileNav, setExpandMobileNav] = useState(false)
 
   const toggleExpandMobileNav = () => setExpandMobileNav(prevState => !prevState)
-  const windowWidthHandler = () => window.innerWidth > 600
   const renderLinksOrHamburger = () => {
     return useMobileNav
-      ? <NavLinks fixedNav={fixedNav} noHero={props.noHero} />
-      : <NavHamburger handleClick={toggleExpandMobileNav} fill={fixedNav || props.noHero ? '#303030' : '#ffffff'} />
+      ? <NavHamburger handleClick={toggleExpandMobileNav} fill={fixedNav || props.noHero ? '#303030' : '#ffffff'} />
+      : <NavLinks fixedNav={fixedNav} noHero={props.noHero} />
   }
 
   useEffect(() => {
@@ -50,11 +49,15 @@ const Nav = (props) => {
   }, [])
 
   useEffect(() => {
-    setUseMobileNav(windowWidthHandler())
-    window.addEventListener('resize', () => {
-      setUseMobileNav(windowWidthHandler())
-    })
-  }, [])
+    const windowIsMobileWidth = () => window.innerWidth < 600
+    const handleResize = () => setUseMobileNav(windowIsMobileWidth())
+    // initial call on load
+    handleResize()
+    // listen for changes
+    window.addEventListener('resize', handleResize)
+    // clean up
+    return () => window.removeEventListener('resize', handleResize)
+  }, [useMobileNav]) // dependency array prevents memory leak
 
   return (
     <>
