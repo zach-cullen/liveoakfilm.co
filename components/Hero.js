@@ -71,17 +71,13 @@ const BackgroundVideoIframe = styled.iframe`
 const Hero = ({ videoUrl, screenPercentage, overlayImgUrl }) => {
   const [iframeLoaded, setIframeLoaded] = useState(false)
   const backgroundRef = useRef(null)
-  const iframeRef = useRef(null)
+  const handleIframeLoad = () => setIframeLoaded(true)
   const applyParallax = (ref, parallaxRate) => {
     if (ref.current !== null) ref.current.style.top = `-${window.pageYOffset * parallaxRate}px`
   }
   useEffect(() => {
     document.addEventListener('scroll', () => applyParallax(backgroundRef, 0.5))
   }, [])
-  const handleIframeLoad = () => {
-    console.log('loaded')
-    setIframeLoaded(true)
-  }
   return (
     <HeroDiv screenPercentage={screenPercentage}>
       <HeroContent>
@@ -93,7 +89,6 @@ const Hero = ({ videoUrl, screenPercentage, overlayImgUrl }) => {
         >
           <BackgroundVideoIframe
             onLoad={handleIframeLoad}
-            ref={iframeRef}
             src={videoUrl}
             frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen
             screenPercentage={screenPercentage}
