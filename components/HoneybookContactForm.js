@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import styled from 'styled-components'
 
 const ContactFormWrapper = styled.div`
   box-sizing: border-box;
+  min-height: 600px;
   max-width: 720px;
   margin: 40px auto;
   padding: 10px;
