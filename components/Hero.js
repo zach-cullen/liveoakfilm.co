@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const HeroDiv = styled.div`
   position: relative;
@@ -49,6 +49,10 @@ const BackgroundVideoWrapper = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  .iframe-loaded {
+    opacity: 1;
+  }
 `
 
 const BackgroundVideoIframe = styled.iframe`
@@ -60,16 +64,24 @@ const BackgroundVideoIframe = styled.iframe`
   top: 0;
   left: 50%;
   transform: translate(-50%, -10%);
+  opacity: 0;
+  transition: opacity 1.5s;
 `
 
 const Hero = ({ videoUrl, screenPercentage, overlayImgUrl }) => {
+  const [iframeLoaded, setIframeLoaded] = useState(false)
   const backgroundRef = useRef(null)
+  const iframeRef = useRef(null)
   const applyParallax = (ref, parallaxRate) => {
     if (ref.current !== null) ref.current.style.top = `-${window.pageYOffset * parallaxRate}px`
   }
   useEffect(() => {
     document.addEventListener('scroll', () => applyParallax(backgroundRef, 0.5))
   }, [])
+  const handleIframeLoad = () => {
+    console.log('loaded')
+    setIframeLoaded(true)
+  }
   return (
     <HeroDiv screenPercentage={screenPercentage}>
       <HeroContent>
@@ -80,9 +92,12 @@ const Hero = ({ videoUrl, screenPercentage, overlayImgUrl }) => {
           ref={backgroundRef}
         >
           <BackgroundVideoIframe
+            onLoad={handleIframeLoad}
+            ref={iframeRef}
             src={videoUrl}
             frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen
             screenPercentage={screenPercentage}
+            className={iframeLoaded ? 'iframe-loaded' : ''}
           />
         </BackgroundVideoWrapper>
       </HeroOverlay>
