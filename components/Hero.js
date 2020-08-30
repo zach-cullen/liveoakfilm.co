@@ -6,10 +6,6 @@ const HeroDiv = styled.div`
   z-index: -2;
   width: 100%;
   height: ${props => props.screenPercentage}vh;
-  background-image: url('/images/hero-mobile-fallback.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 `
 const HeroContent = styled.div`
   position: absolute;
@@ -45,10 +41,14 @@ const BackgroundVideoWrapper = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 80%;
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
+  background-image: url('/images/hero-mobile-fallback.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 `
 
 const BackgroundVideoIframe = styled.iframe`
@@ -63,12 +63,12 @@ const BackgroundVideoIframe = styled.iframe`
 `
 
 const Hero = ({ videoUrl, screenPercentage, overlayImgUrl }) => {
-  const iframeRef = useRef(null)
+  const backgroundRef = useRef(null)
   const applyParallax = (ref, parallaxRate) => {
     if (ref.current !== null) ref.current.style.top = `-${window.pageYOffset * parallaxRate}px`
   }
   useEffect(() => {
-    document.addEventListener('scroll', () => applyParallax(iframeRef, 0.5))
+    document.addEventListener('scroll', () => applyParallax(backgroundRef, 0.5))
   }, [])
   return (
     <HeroDiv screenPercentage={screenPercentage}>
@@ -76,9 +76,10 @@ const Hero = ({ videoUrl, screenPercentage, overlayImgUrl }) => {
         <img src={overlayImgUrl} />
       </HeroContent>
       <HeroOverlay>
-        <BackgroundVideoWrapper>
+        <BackgroundVideoWrapper
+          ref={backgroundRef}
+        >
           <BackgroundVideoIframe
-            ref={iframeRef}
             src={videoUrl}
             frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen
             screenPercentage={screenPercentage}
