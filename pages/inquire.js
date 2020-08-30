@@ -3,6 +3,7 @@ import Footer from '../components/Footer'
 import Hero from '../components/Hero'
 import PageSection from '../components/PageSection'
 import CustomContainer from '../components/CustomContainer'
+import HoneybookContactForm from '../components/HoneybookContactForm'
 
 export default function Inquire ({ pageContent }) {
   return (
@@ -16,6 +17,7 @@ export default function Inquire ({ pageContent }) {
       <PageSection>
         <CustomContainer maxW='1200px' pX='30px' pY='30px' textAlign='center'>
           <h3>Wedding Inquiries:</h3>
+          <HoneybookContactForm />
         </CustomContainer>
       </PageSection>
       <Footer />
