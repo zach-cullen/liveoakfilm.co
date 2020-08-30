@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 const ContactFormWrapper = styled.div`
@@ -20,13 +20,23 @@ export default function HoneybookContactForm () {
     t.type = 'text/javascript'
     t.async = !0
     t.src = n
+    t.id = 'honeybook-script'
     e = b.getElementsByTagName(s)[0]
     e.parentNode.insertBefore(t, e)
   }
+  const loadHoneybookForm = () => {
+    HBfunction(window, document, 'script', 'https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js', '5ddd9d57b70f6e00700bf232')
+  }
 
   useEffect(() => {
-    console.log('effect!')
-    HBfunction(window, document, 'script', 'https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js', '5ddd9d57b70f6e00700bf232')
+    const honeybookScriptLoaded = !!document.querySelector('#honeybook-script')
+    honeybookScriptLoaded ? document.location.reload() : loadHoneybookForm()
+    // loadHoneybookForm()
+    // // const checkIfFormLoaded = setTimeout(() => {
+    // //   const countIframes = () => document.querySelectorAll('iframe').length
+    // //   if (countIframes() < 2) { document.location.reload() }
+    // // }, 1000)
+    // // return () => clearTimeout(checkIfFormLoaded)
   })
 
   return (
