@@ -51,11 +51,8 @@ const Nav = (props) => {
   useEffect(() => {
     const windowIsMobileWidth = () => window.innerWidth < 600
     const handleResize = () => setUseMobileNav(windowIsMobileWidth())
-    // initial call on load
-    handleResize()
-    // listen for changes
+    handleResize() // initial call on load set's first state (default is mobile prior to call)
     window.addEventListener('resize', handleResize)
-    // clean up
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
