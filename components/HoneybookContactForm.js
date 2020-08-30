@@ -1,4 +1,14 @@
 import { useEffect } from 'react'
+import styled from 'styled-components'
+
+const ContactFormWrapper = styled.div`
+  box-sizing: border-box;
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: ${props => props.theme.effects.mdBoxShadow};
+`
 
 // original snippet provided by Honeybook (project management software) and reformatted as react component
 // this snippet loads external script after page load to display contact form in iframe
@@ -15,13 +25,14 @@ export default function HoneybookContactForm () {
   }
 
   useEffect(() => {
+    console.log('effect!')
     HBfunction(window, document, 'script', 'https://widget.honeybook.com/assets_users_production/websiteplacements/placement-controller.min.js', '5ddd9d57b70f6e00700bf232')
-  }, [])
+  })
 
   return (
-    <>
+    <ContactFormWrapper>
       <div className='hb-p-5ddd9d57b70f6e00700bf232-1' />
       <img height='1' width='1' style={{ display: 'none' }} src='https://www.honeybook.com/p.png?pid=5ddd9d57b70f6e00700bf232' />
-    </>
+    </ContactFormWrapper>
   )
 }
