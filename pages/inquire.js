@@ -15,7 +15,7 @@ export default function Inquire ({ pageContent }) {
         videoUrl='https://player.vimeo.com/video/227477654?background=1&autoplay=1&loop=1&byline=0&title=0'
       />
       <PageSection>
-        <CustomContainer maxW='1200px' pX='30px' pY='30px' textAlign='center'>
+        <CustomContainer maxW='1200px' pX='20px' pY='30px' textAlign='center'>
           <h3>Wedding Inquiries:</h3>
           <HoneybookContactForm />
         </CustomContainer>
