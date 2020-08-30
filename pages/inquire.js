@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import PageSection from '../components/PageSection'
 import CustomContainer from '../components/CustomContainer'
 import HoneybookContactForm from '../components/HoneybookContactForm'
+import LeafDetail from '../components/LeafDetail'
 
 export default function Inquire ({ pageContent }) {
   return (
@@ -18,7 +19,9 @@ export default function Inquire ({ pageContent }) {
         <CustomContainer maxW='1200px' pX='20px' pY='30px' textAlign='center'>
           <h3>Wedding Inquiries:</h3>
           <HoneybookContactForm />
+          <h2>Thank You!</h2>
         </CustomContainer>
+        <LeafDetail />
       </PageSection>
       <Footer />
     </>
