@@ -43,9 +43,9 @@ const Nav = (props) => {
   }
 
   useEffect(() => {
-    document.addEventListener('scroll', () => {
-      setFixedNav(window.pageYOffset > 600)
-    })
+    const handleScroll = () => setFixedNav(window.pageYOffset > 600)
+    document.addEventListener('scroll', handleScroll)
+    return () => document.removeEventListener('scroll', handleScroll)
   }, [])
 
   useEffect(() => {
@@ -57,7 +57,7 @@ const Nav = (props) => {
     window.addEventListener('resize', handleResize)
     // clean up
     return () => window.removeEventListener('resize', handleResize)
-  }, [useMobileNav]) // dependency array prevents memory leak
+  }, [])
 
   return (
     <>
