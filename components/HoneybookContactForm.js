@@ -20,7 +20,7 @@ export default function HoneybookContactForm () {
     t.type = 'text/javascript'
     t.async = !0
     t.src = n
-    t.id = 'honeybook-script'
+    t.id = 'hb-script' // add identifier to script tag so dom can be checked on subsequent visits
     e = b.getElementsByTagName(s)[0]
     e.parentNode.insertBefore(t, e)
   }
@@ -30,13 +30,8 @@ export default function HoneybookContactForm () {
 
   useEffect(() => {
     const honeybookScriptLoaded = !!document.querySelector('#honeybook-script')
+    // external script prevents multiple calls, so we must reload page if this is not the first visit
     honeybookScriptLoaded ? document.location.reload() : loadHoneybookForm()
-    // loadHoneybookForm()
-    // // const checkIfFormLoaded = setTimeout(() => {
-    // //   const countIframes = () => document.querySelectorAll('iframe').length
-    // //   if (countIframes() < 2) { document.location.reload() }
-    // // }, 1000)
-    // // return () => clearTimeout(checkIfFormLoaded)
   })
 
   return (
