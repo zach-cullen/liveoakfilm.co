@@ -16,7 +16,7 @@ const ReviewGalleryGrid = styled.div`
 const ReviewImg = styled.div`
   width: 100%;
   height: 80px;
-  background-image: url('http://localhost:1337${props => props.reviewImageUrl}');
+  background-image: url('https://liveoak-strapi.herokuapp.com${props => props.reviewImageUrl}');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
