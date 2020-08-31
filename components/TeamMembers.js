@@ -31,7 +31,7 @@ const Headshot = styled.div`
   grid-area: head;
   min-height: 100px;
   min-width: 100px;
-  background-image: url('http://localhost:1337${props => props.headshotUrl}');
+  background-image: url('https://liveoak-strapi.herokuapp.com${props => props.headshotUrl}');
   background-repeat: no-repeat;
   background-position: top;
   background-size: contain;
