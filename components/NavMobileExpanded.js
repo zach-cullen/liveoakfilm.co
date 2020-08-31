@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { CSSTransition } from 'react-transition-group'
 import Link from 'next/link'
+import CloseSVG from './CloseSVG'
 
 const ExpandedOverlay = styled.div`
   position: fixed;
@@ -45,7 +46,20 @@ const ExpandTransition = styled.div`
 `
 
 const LinksContainer = styled.div`
-  padding: 60px;
+  padding: 0 60px;
+`
+
+const CloseButton = styled.div`
+  height: 60px;
+`
+
+const IconWrapper = styled.div`
+  display: block;
+  float: right;
+  height: 60px;
+  width: 60px;
+  box-sizing: border-box;
+  padding: 15px;
 `
 
 const StyledLink = styled.a`
@@ -56,7 +70,7 @@ const StyledLink = styled.a`
   h2 {
     color: ${props => props.theme.colors.stone};
     transition: color 0.1s;
-    
+
     &:hover {
       color: ${props => props.theme.colors.amber};
     }
@@ -72,6 +86,11 @@ const NavMobileExpanded = ({ show, close }) => (
       unmountOnExit
     >
       <ExpandedOverlay onClick={close}>
+        <CloseButton>
+          <IconWrapper>
+            <CloseSVG fill='#fff' />
+          </IconWrapper>
+        </CloseButton>
         <LinksContainer>
           <Link href='/' passHref>
             <StyledLink>
