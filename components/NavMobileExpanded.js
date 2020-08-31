@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { CSSTransition } from 'react-transition-group'
+import Link from 'next/link'
 
 const ExpandedOverlay = styled.div`
   position: fixed;
@@ -8,7 +9,7 @@ const ExpandedOverlay = styled.div`
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: ${props => props.theme.colors.amber};
+  background-color: ${props => props.theme.colors.charcoal};
   color: white;
 `
 
@@ -43,6 +44,19 @@ const ExpandTransition = styled.div`
   }
 `
 
+const LinksContainer = styled.div`
+  padding: 60px;
+`
+
+const StyledLink = styled.a`
+  display: block;
+  padding: 15px 0;
+
+  h2 {
+    color: #fff;
+  }
+`
+
 const NavMobileExpanded = ({ show, close }) => (
   <ExpandTransition>
     <CSSTransition
@@ -51,7 +65,30 @@ const NavMobileExpanded = ({ show, close }) => (
       classNames='expand-'
       unmountOnExit
     >
-      <ExpandedOverlay onClick={close} />
+      <ExpandedOverlay onClick={close}>
+        <LinksContainer>
+          <Link href='/' passHref>
+            <StyledLink>
+              <h2>Home</h2>
+            </StyledLink>
+          </Link>
+          <Link href='/about' passHref>
+            <StyledLink>
+              <h2>About</h2>
+            </StyledLink>
+          </Link>
+          <Link href='/portfolio' passHref>
+            <StyledLink>
+              <h2>Portfolio</h2>
+            </StyledLink>
+          </Link>
+          <Link href='/inquire' passHref>
+            <StyledLink>
+              <h2>Inquire</h2>
+            </StyledLink>
+          </Link>
+        </LinksContainer>
+      </ExpandedOverlay>
     </CSSTransition>
   </ExpandTransition>
 )
