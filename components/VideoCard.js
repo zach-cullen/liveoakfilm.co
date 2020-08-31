@@ -62,7 +62,7 @@ const VideoDescription = styled.div`
   }
 `
 
-const FeaturedVideo = ({ filmCollection, flipDirection, showVideoFullScreen, setSelectedVideoUrl }) => {
+const VideoCard = ({ filmCollection, flipDirection, showVideoFullScreen, setSelectedVideoUrl }) => {
   const handlePlayButtonClick = () => {
     showVideoFullScreen()
     setSelectedVideoUrl(filmCollection.videoUrl)
@@ -84,4 +84,4 @@ const FeaturedVideo = ({ filmCollection, flipDirection, showVideoFullScreen, set
   )
 }
 
-export default FeaturedVideo
+export default VideoCard

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import FeaturedVideo from './FeaturedVideo'
+import VideoCard from './VideoCard'
 import VideoFullScreen from './VideoFullScreen'
 
 const VideoGallery = ({ filmCollections }) => {
@@ -15,7 +15,7 @@ const VideoGallery = ({ filmCollections }) => {
         videoUrl={selectedVideoUrl}
       />
       {filmCollections.map((filmCollection, i) => (
-        <FeaturedVideo
+        <VideoCard
           key={filmCollection.id}
           filmCollection={filmCollection}
           flipDirection={(i + 1) % 2 === 0}
