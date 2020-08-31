@@ -13,7 +13,7 @@ export default function Portfolio ({ pageContent }) {
       <PageSection>
         <CustomContainer maxW='1200px' pX='30px'>
           <VideoGallery filmCollections={pageContent.film_collections} />
-          <LinkButton text="Inquire Now" href='inquire' themeColor='charcoal'>Let's Make a Movie</LinkButton>
+          <LinkButton text='Inquire Now' href='inquire' themeColor='charcoal'>Let's Make a Movie</LinkButton>
         </CustomContainer>
       </PageSection>
       <Footer />
@@ -22,7 +22,7 @@ export default function Portfolio ({ pageContent }) {
 }
 
 export async function getStaticProps () {
-  const res = await fetch('http://localhost:1337/portfolio')
+  const res = await fetch('https://liveoak-strapi.herokuapp.com/portfolio')
   const pageContent = await res.json()
   return {
     props: {
