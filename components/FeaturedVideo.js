@@ -38,7 +38,7 @@ const PlayButton = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   opacity: 0.9;
-  filter: drop-shadow(0px 0px 15px #000);
+  filter: drop-shadow(0px 0px 20px #505050);
   transition: opacity 0.1s;
 
   &:hover {
