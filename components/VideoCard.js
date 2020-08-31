@@ -22,7 +22,7 @@ const VideoBlock = styled.div`
   grid-area: video;
   width: 100%;
   min-height: 300px;
-  background-image: url('http://localhost:1337${props => props.coverImageURL}');
+  background-image: url('https://liveoak-strapi.herokuapp.com${props => props.coverImageURL}');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
