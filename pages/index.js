@@ -16,7 +16,7 @@ export default function Home ({ pageContent }) {
       <Hero
         screenPercentage={66}
         overlayImgUrl='/images/liveoakfilms-logo-banner.png'
-        videoUrl='https://player.vimeo.com/video/227477654?background=1&autoplay=1&loop=1&byline=0&title=0'
+        videoUrl='https://player.vimeo.com/video/227477654?background=1&autoplay=1&loop=1&byline=0&title=0&autopause=0'
       />
       <PageSection
         bgColor={props => props.theme.colors.stone}

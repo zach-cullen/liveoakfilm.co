@@ -16,7 +16,7 @@ export default function About ({ pageContent }) {
       <Hero
         screenPercentage={50}
         overlayImgUrl='/images/capture-more.png'
-        videoUrl='https://player.vimeo.com/video/227477654?background=1&autoplay=1&loop=1&byline=0&title=0'
+        videoUrl='https://player.vimeo.com/video/227477654?background=1&autoplay=1&loop=1&byline=0&title=0&autopause=0'
       />
       <PageSection>
         <CustomContainer textAlign='center' maxW='720px' pX='30px' pY='40px'>
