@@ -41,7 +41,7 @@ This projects also uses styled's ThemeProvider to programmatically set colors an
 
 ### React Transition Group
 
-React Transition Group ([docs](https://reactcommunity.org/react-transition-group/]) enables animations to be triggered on mount and unmounting of components creating a wedge in the component lifecycle where css classes can be added and removed. 
+React Transition Group ([docs](https://reactcommunity.org/react-transition-group/])) enables animations to be triggered on mount and unmounting of components creating a wedge in the component lifecycle where css classes can be added and removed. 
 
 See './components/NavMobileExpanded' in this project for an example of its use. 
 
