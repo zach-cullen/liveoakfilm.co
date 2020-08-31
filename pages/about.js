@@ -48,7 +48,7 @@ export default function About ({ pageContent }) {
 }
 
 export async function getStaticProps () {
-  const res = await fetch('http://localhost:1337/about')
+  const res = await fetch('https://liveoak-strapi.herokuapp.com/about')
   const pageContent = await res.json()
   return {
     props: {
