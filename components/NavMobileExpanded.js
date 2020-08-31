@@ -49,11 +49,17 @@ const LinksContainer = styled.div`
 `
 
 const StyledLink = styled.a`
+  cursor: pointer;
   display: block;
   padding: 15px 0;
 
   h2 {
-    color: #fff;
+    color: ${props => props.theme.colors.stone};
+    transition: color 0.1s;
+    
+    &:hover {
+      color: ${props => props.theme.colors.amber};
+    }
   }
 `
 
