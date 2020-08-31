@@ -49,7 +49,7 @@ See './components/NavMobileExpanded' in this project for an example of its use.
 
 [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-### Data-fetching - Strapi Headless CMS
+### Data Fetching: Strapi Headless CMS
 
 This website loads static content from [Strapi](https://strapi.io/documentation/v3.x/getting-started/introduction.html), an open source Node content management system. Page content is pre-loaded and rendered by each page at build time using Next's '[getStaticProps](https://nextjs.org/docs/)' function. 
 
