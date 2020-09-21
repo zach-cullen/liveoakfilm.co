@@ -83,7 +83,7 @@ const Hero = ({ videoUrl, screenPercentage, overlayImgUrl }) => {
   return (
     <HeroDiv screenPercentage={screenPercentage}>
       <HeroContent>
-        <img src={overlayImgUrl} />
+        <img src={overlayImgUrl} alt='Live Oak Films Logo' />
       </HeroContent>
       <HeroOverlay>
         <BackgroundVideoWrapper
@@ -95,6 +95,7 @@ const Hero = ({ videoUrl, screenPercentage, overlayImgUrl }) => {
             frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen
             screenPercentage={screenPercentage}
             className={iframeLoaded ? 'iframe-loaded' : ''}
+            title='Live Oak Films Background Video Loop'
           />
         </BackgroundVideoWrapper>
       </HeroOverlay>
