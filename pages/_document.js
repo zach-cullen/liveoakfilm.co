@@ -4,7 +4,7 @@ import { ServerStyleSheet } from 'styled-components'
 export default class MyDocument extends Document {
   render () {
     return (
-      <html>
+      <html lang='en'>
         <Head>
           <title>Live Oak Films</title>
           <link rel='icon' href='/favicon.ico' />
