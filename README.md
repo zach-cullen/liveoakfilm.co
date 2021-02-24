@@ -1,7 +1,7 @@
 # liveoakfilm.co
 
 See Deployed Site:
-[Live Oak Films](https://liveoakfilm-co.vercel.app/)
+[Live Oak Films](https://liveoakfilm.co/)
 
 This is the newest version of a static website I built for my previous business, Live Oak Films. It features responsive styles, css animation, and server side data fetching to the CMS. Videos are provided by the Vimeo player API, and images are hosted on AWS S3. 
 
